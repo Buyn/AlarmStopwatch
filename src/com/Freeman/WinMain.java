@@ -13,6 +13,7 @@ public class WinMain extends JFrame{
     private Button bResetAll;
     private Button bAlarm;
     private Button bWatch;
+    private Alarm alAlarm;
 
     public WinMain() {
     super("doAlarm Stopwatch");
@@ -24,6 +25,7 @@ public class WinMain extends JFrame{
         setComponennts();
     }
     private void setComponennts(){
+        alAlarm = new Alarm();
         setLabels();
         setButtons();
 //        setTable();

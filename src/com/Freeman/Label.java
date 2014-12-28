@@ -7,26 +7,26 @@ import javax.swing.*;
  */
 public class Label {
     //Integer block
-    public int iTime = 0;
-    private String  sTime;
-    private String sText = "Sekunds: ";
-    //labels block
-    private JLabel jlWatch;
-    //doTime block
-    Timer tTime;
-    //Constructor block
-    public  Label(){
-        tTime =new Timer();
-        sTime = tTime.getFormatedTime();
-        jlWatch = new JLabel(sText + sTime);
-    }
-    public  Label(String sNewText){
-        sText=sNewText;
-        tTime =new Timer();
-        sTime = tTime.getFormatedTime();
-        jlWatch = new JLabel(sText + sTime);
-    }
-    //mettods block
+        public int iTime = 0;
+        private String  sTime;
+        private String sText = "Sekunds: ";
+        //labels block
+        private JLabel jlWatch;
+        //doTime block
+        Timer tTime;
+        //Constructor block
+        public  Label(){
+            tTime =new Timer();
+            sTime = tTime.getFormatedTime();
+            jlWatch = new JLabel(sText + sTime);
+        }
+        public  Label(String sNewText){
+            sText=sNewText;
+            tTime =new Timer();
+            sTime = tTime.getFormatedTime();
+            jlWatch = new JLabel(sText + sTime);
+        }
+        //mettods block
     public int doTime(){
         sTime = tTime.getFormatDeltaTime();
         updateLabel();
