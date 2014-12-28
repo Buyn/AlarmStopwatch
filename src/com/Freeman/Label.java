@@ -53,12 +53,15 @@ public class Label {
     public void setText(String sNewText){
         sText = sNewText;
         updateLabel();
+    }    public void setTime(String sNewText){
+        sTime = sNewText;
+        updateLabel();
     }
     //    geters block
     public Timer getTimer() {
         return tTime;
     }
-    public JLabel getLabel() {
+    public JLabel getJLabel() {
         return jlWatch;
     }
 }

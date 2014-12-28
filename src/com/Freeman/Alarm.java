@@ -41,7 +41,7 @@ public class Alarm implements Runnable {
         return lbAlarm;
     }
     public JLabel getJLabel() {
-        return lbAlarm.getLabel();
+        return lbAlarm.getJLabel();
     }
     public Button getButton() {
         return btAlarm;

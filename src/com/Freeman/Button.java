@@ -46,7 +46,7 @@ public class Button {
         jbAlarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lbAlarm.resetAlarm();
-                lbAlarm.updateLabel();
+                lbAlarm.doAlarm();
             }
         });
         return jbAlarm;

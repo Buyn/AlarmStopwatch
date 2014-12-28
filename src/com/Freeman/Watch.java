@@ -11,6 +11,7 @@ import javax.swing.*;
 public class Watch  implements Runnable {
     Label   lbWatch;
     Button  btWatch;
+    Timer tTime;
 
     @Override
     public void run() {
@@ -44,15 +45,15 @@ public class Watch  implements Runnable {
         return lbWatch;
     }
     public JLabel getJLabel() {
-        return lbWatch.getLabel();
+        return lbWatch.getJLabel();
     }
     public Button getButton() {
         return btWatch;
     }
+
     public JButton getJButton() {
         return btWatch.getStopWatch();
     }
-
     /**experement block
      *
      *
@@ -61,7 +62,6 @@ public class Watch  implements Runnable {
      //labels block
      private JLabel jlWatch;
      //doTime block
-     Timer tTime;
      //mettods block
      public int doTime(){
      sTime = tTime.getFormatDeltaTime();
@@ -100,7 +100,7 @@ public class Watch  implements Runnable {
      public Timer getTimer() {
      return tTime;
      }
-     public JLabel getLabel() {
+     public JLabel getJLabel() {
      return jlWatch;
      }
      }
