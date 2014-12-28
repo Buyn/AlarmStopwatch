@@ -8,8 +8,8 @@ import javax.swing.*;
  * todo create label and button
  */
 public class Watch  implements Runnable {
-    Label   lbAlarm;
-    Button  btAlarm;
+    Label   lbWatch;
+    Button  btWatch;
 
     @Override
     public void run() {
@@ -19,29 +19,29 @@ public class Watch  implements Runnable {
      * Constructors Block
      * */
     public Watch(){
-        lbAlarm = new Label("doAlarm: ");
-        btAlarm = new Button();
-        btAlarm.setAlarmButton (lbAlarm);
+        lbWatch = new Label();
+        btWatch = new Button();
+        btWatch.setWatchButton (lbWatch);
     }
     /**
      *    wripers block
      */
     public void runUpdate(){
-        lbAlarm.updateLabel();
+        lbWatch.updateLabel();
     }
     /**
      * Geters and Seters block
      */
     public Label getLabel() {
-        return lbAlarm;
+        return lbWatch;
     }
     public JLabel getJLabel() {
-        return lbAlarm.getLabel();
+        return lbWatch.getLabel();
     }
     public Button getButton() {
-        return btAlarm;
+        return btWatch;
     }
     public JButton getJButton() {
-        return btAlarm.getAlarm();
+        return btWatch.getStopWatch();
     }
 }

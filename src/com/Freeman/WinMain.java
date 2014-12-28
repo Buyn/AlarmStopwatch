@@ -8,10 +8,9 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-    private Label lbWatch;
     private Button bResetAll;
-    private Button bWatch;
     private Alarm alAlarm;
+    private Watch waWatch;
 
     public WinMain() {
     super("doAlarm Stopwatch");
@@ -24,29 +23,27 @@ public class WinMain extends JFrame{
     }
     private void setComponennts(){
         alAlarm = new Alarm();
+        waWatch = new Watch();
         setLabels();
         setButtons();
 //        delate coments for adding table
 //        setTable();
     }
     private void setLabels(){
-        lbWatch = new Label();
+//        lbWatch = new Label();
         JPanel jpLabels = new JPanel();
-        jpLabels.add(lbWatch.getLabel());
+        jpLabels.add(waWatch.getJLabel());
         jpLabels.add(alAlarm.getJLabel());
         add(jpLabels, BorderLayout.NORTH);
     }
     private void setButtons(){
         //set reset button
         bResetAll = new Button();
-        bResetAll.setResetAllButton(lbWatch, alAlarm.getLabel());
+        bResetAll.setResetAllButton(waWatch.getLabel(), alAlarm.getLabel());
         add(bResetAll.getResetAll());
-        //create buttons for panell
-        bWatch = new Button();
-        bWatch.setWatchButton (lbWatch);
         //add to panel
         JPanel jpButtons = new JPanel();
-        jpButtons.add(bWatch.getStopWatch());
+        jpButtons.add(waWatch.getJButton());
         jpButtons.add(alAlarm.getJButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
@@ -61,13 +58,13 @@ public class WinMain extends JFrame{
     }
 
     public Label getLbWatch() {
-        return lbWatch;
+        return waWatch.getLabel();
     }
     public Label getLbAlarm() {
         return alAlarm.getLabel();
     }
     public Button getbWatch() {
-        return bWatch;
+        return waWatch.getButton();
     }
     public Button getbAlarm() {
         return alAlarm.getButton();

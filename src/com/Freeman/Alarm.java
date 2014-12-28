@@ -4,8 +4,6 @@ import javax.swing.*;
 
 /**
  * Created by BuYn on 09.12.2014.
- * todo runable
- * todo create label and button
  */
 public class Alarm implements Runnable {
     Label   lbAlarm;

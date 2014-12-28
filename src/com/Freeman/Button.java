@@ -43,7 +43,7 @@ public class Button {
     }
     public JButton setAlarmButton(Label lbNewAlarm){
         this.lbAlarm = lbNewAlarm;
-        jbAlarm = new JButton("Set doAlarm");
+        jbAlarm = new JButton("Set Alarm");
         jbAlarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lbAlarm.doAlarm();
