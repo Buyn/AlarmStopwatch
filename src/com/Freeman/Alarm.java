@@ -51,3 +51,40 @@ public class Alarm implements Runnable {
     }
 }
 
+/**experement block
+ *
+ *
+ //mettods block
+ //doTime block
+ public int doTime(){
+ sTime = tTime.getFormatDeltaTime();
+ updateLabel();
+ return iTime;
+ }
+ public int resetTime(){
+ tTime.setToZeroStart();
+ updateLabel();
+ return iTime;
+ }
+ public int resetAlarm(int iMinuts){
+ tTime.setAlarm(iMinuts);
+ updateLabel();
+ return iTime;
+ }
+ public int resetAlarm(){
+ tTime.setAlarm();
+ updateLabel();
+ return iTime;
+ }
+ public int doAlarm(){
+ sTime = tTime.getFormatTimeLeft();
+ updateLabel();
+ return iTime;
+ }
+ //    geters block
+ public Timer getTimer() {
+ return tTime;
+ }
+ }
+
+ * */

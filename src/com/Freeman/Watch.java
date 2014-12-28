@@ -30,13 +30,24 @@ public class Watch  implements Runnable {
     public Watch(){
         lbWatch = new Label();
         btWatch = new Button();
+        tTime = new Timer();
+        lbWatch.setTime(tTime.getFormatedTime());
+        doTime();
         btWatch.setWatchButton(lbWatch);
+    }
+    public void doTime(){
+        lbWatch.setTime(tTime.getFormatDeltaTime());
+        lbWatch.updateLabel();
     }
     /**
      *    wripers block
      */
     public void runUpdate(){
-        lbWatch.doTime();
+        doTime();
+    }
+    public void resetTime(){
+        tTime.setToZeroStart();
+        doTime();
     }
     /**
      * Geters and Seters block
@@ -50,61 +61,10 @@ public class Watch  implements Runnable {
     public Button getButton() {
         return btWatch;
     }
-
     public JButton getJButton() {
         return btWatch.getStopWatch();
     }
-    /**experement block
-     *
-     *
-     private String  sTime;
-     private String sText = "Sekunds: ";
-     //labels block
-     private JLabel jlWatch;
-     //doTime block
-     //mettods block
-     public int doTime(){
-     sTime = tTime.getFormatDeltaTime();
-     updateLabel();
-     return iTime;
-     }
-     public int resetTime(){
-     tTime.setToZeroStart();
-     updateLabel();
-     return iTime;
-     }
-     public int resetAlarm(int iMinuts){
-     tTime.setAlarm(iMinuts);
-     updateLabel();
-     return iTime;
-     }
-     public int resetAlarm(){
-     tTime.setAlarm();
-     updateLabel();
-     return iTime;
-     }
-     public int doAlarm(){
-     sTime = tTime.getFormatTimeLeft();
-     updateLabel();
-     return iTime;
-     }
-     public void updateLabel(){
-     jlWatch.setText(sText + sTime);
-     }
-     //Seters Block
-     public void setText(String sNewText){
-     sText = sNewText;
-     updateLabel();
-     }
-     //    geters block
-     public Timer getTimer() {
-     return tTime;
-     }
-     public JLabel getJLabel() {
-     return jlWatch;
-     }
-     }
-
-     * */
-
+    public Timer getTimer() {
+        return tTime;
+    }
 }

@@ -13,7 +13,7 @@ public class WinMain extends JFrame{
     private Watch waWatch;
 
     public WinMain() {
-    super("doAlarm Stopwatch");
+    super("Alarm Stopwatch");
         setMainFrame();
     }
     private void setMainFrame(){
