@@ -69,6 +69,12 @@ public class WinMain extends JFrame{
     public Button getbAlarm() {
         return alAlarm.getButton();
     }
+    public Alarm getAlarm() {
+        return alAlarm;
+    }
+    public Watch getWatch() {
+        return waWatch;
+    }
     public Button getbResetAll() {
         return bResetAll;
     }

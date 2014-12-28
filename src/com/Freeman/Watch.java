@@ -13,7 +13,14 @@ public class Watch  implements Runnable {
 
     @Override
     public void run() {
-
+        while (true) {
+            runUpdate();
+            try {
+                Thread.sleep(Timer.SEKUNDS);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
     /**
      * Constructors Block
@@ -21,13 +28,13 @@ public class Watch  implements Runnable {
     public Watch(){
         lbWatch = new Label();
         btWatch = new Button();
-        btWatch.setWatchButton (lbWatch);
+        btWatch.setWatchButton(lbWatch);
     }
     /**
      *    wripers block
      */
     public void runUpdate(){
-        lbWatch.updateLabel();
+        lbWatch.doTime();
     }
     /**
      * Geters and Seters block

@@ -11,7 +11,14 @@ public class Alarm implements Runnable {
 
     @Override
     public void run() {
-
+        while (true) {
+            runUpdate();
+            try {
+                Thread.sleep(Timer.SEKUNDS);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 /**
  * Constructors Block
@@ -25,8 +32,7 @@ public class Alarm implements Runnable {
  *    wripers block
  */
     public void runUpdate(){
-
-        lbAlarm.updateLabel();
+        lbAlarm.doAlarm();
     }
 /**
  * Geters and Seters block
