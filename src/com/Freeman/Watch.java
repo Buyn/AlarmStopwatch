@@ -11,7 +11,7 @@ import javax.swing.*;
 public class Watch  implements Runnable {
     Label   lbWatch;
     Button  btWatch;
-    Timer tTime;
+    Timer   tTime;
 
     @Override
     public void run() {
@@ -32,22 +32,19 @@ public class Watch  implements Runnable {
         btWatch = new Button();
         tTime = new Timer();
         lbWatch.setTime(tTime.getFormatedTime());
-        doTime();
+        runUpdate();
         btWatch.setWatchButton(lbWatch);
     }
-    public void doTime(){
+ /**
+  * Metods Block
+  * */
+    public void runUpdate(){
         lbWatch.setTime(tTime.getFormatDeltaTime());
         lbWatch.updateLabel();
     }
-    /**
-     *    wripers block
-     */
-    public void runUpdate(){
-        doTime();
-    }
     public void resetTime(){
         tTime.setToZeroStart();
-        doTime();
+        runUpdate();
     }
     /**
      * Geters and Seters block

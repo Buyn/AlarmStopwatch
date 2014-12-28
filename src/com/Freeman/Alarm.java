@@ -1,13 +1,13 @@
 package com.Freeman;
-
 import javax.swing.*;
 
 /**
  * Created by BuYn on 09.12.2014.
  */
 public class Alarm implements Runnable {
-    Label   lbAlarm;
-    Button  btAlarm;
+    Label lbAlarm;
+    Button btAlarm;
+    Timer tTime;
 
     @Override
     public void run() {
@@ -20,23 +20,37 @@ public class Alarm implements Runnable {
             }
         }
     }
-/**
- * Constructors Block
- * */
-    public Alarm(){
-        lbAlarm = new Label("doAlarm: ");
+
+    /**
+     * Constructors Block
+     */
+    public Alarm() {
+        lbAlarm = new Label("Alarm: ");
         btAlarm = new Button();
-        btAlarm.setAlarmButton (lbAlarm);
+        tTime = new Timer();
+        lbAlarm.setTime(tTime.getFormatedTime());
+        runUpdate();
+        btAlarm.setAlarmButton(lbAlarm);
     }
-/**
- *    wrapers block
- */
-    public void runUpdate(){
-        lbAlarm.doAlarm();
+
+    /**
+     * Metods block
+     */
+    public void runUpdate() {
+        lbAlarm.setTime(tTime.getFormatTimeLeft());
+        lbAlarm.updateLabel();
     }
-/**
- * Geters and Seters block
-*/
+    public void resetAlarm(int iMinuts) {
+        tTime.setAlarm(iMinuts);
+        lbAlarm.updateLabel();
+    }
+    public void resetAlarm() {
+        tTime.setAlarm();
+        lbAlarm.updateLabel();
+    }
+    /**
+     * Geters and Seters block
+     */
     public Label getLabel() {
         return lbAlarm;
     }
@@ -49,42 +63,7 @@ public class Alarm implements Runnable {
     public JButton getJButton() {
         return btAlarm.getAlarm();
     }
+    public Timer getTimer() {
+        return tTime;
+    }
 }
-
-/**experement block
- *
- *
- //mettods block
- //doTime block
- public int doTime(){
- sTime = tTime.getFormatDeltaTime();
- updateLabel();
- return iTime;
- }
- public int resetTime(){
- tTime.setToZeroStart();
- updateLabel();
- return iTime;
- }
- public int resetAlarm(int iMinuts){
- tTime.setAlarm(iMinuts);
- updateLabel();
- return iTime;
- }
- public int resetAlarm(){
- tTime.setAlarm();
- updateLabel();
- return iTime;
- }
- public int doAlarm(){
- sTime = tTime.getFormatTimeLeft();
- updateLabel();
- return iTime;
- }
- //    geters block
- public Timer getTimer() {
- return tTime;
- }
- }
-
- * */
