@@ -8,10 +8,10 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-    private Label lbAlarm;
+//    private Label lbAlarm;
     private Label lbWatch;
     private Button bResetAll;
-    private Button bAlarm;
+//    private Button bAlarm;
     private Button bWatch;
     private Alarm alAlarm;
 
@@ -28,31 +28,31 @@ public class WinMain extends JFrame{
         alAlarm = new Alarm();
         setLabels();
         setButtons();
+//        delate coments for adding table
 //        setTable();
     }
-
     private void setLabels(){
-        lbAlarm = new Label("doAlarm: ");
+//        lbAlarm = alAlarm.getLabel();
         lbWatch = new Label();
         JPanel jpLabels = new JPanel();
         jpLabels.add(lbWatch.getLabel());
-        jpLabels.add(lbAlarm.getLabel());
+        jpLabels.add(alAlarm.getJLabel());
         add(jpLabels, BorderLayout.NORTH);
     }
     private void setButtons(){
         //set reset button
         bResetAll = new Button();
-        bResetAll.setResetAllButton(lbWatch, lbAlarm);
+        bResetAll.setResetAllButton(lbWatch, alAlarm.getLabel());
         add(bResetAll.getResetAll());
         //create buttons for panell
-        bAlarm = new Button();
-        bAlarm.setAlarmButton (lbAlarm);
+//        bAlarm = new Button();
+//        bAlarm.setAlarmButton (lbAlarm);
         bWatch = new Button();
         bWatch.setWatchButton (lbWatch);
         //add to panel
         JPanel jpButtons = new JPanel();
         jpButtons.add(bWatch.getStopWatch());
-        jpButtons.add(bAlarm.getAlarm());
+        jpButtons.add(alAlarm.getJButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
     private void setTable (){
@@ -69,13 +69,13 @@ public class WinMain extends JFrame{
         return lbWatch;
     }
     public Label getLbAlarm() {
-        return lbAlarm;
+        return alAlarm.getLabel();
     }
     public Button getbWatch() {
         return bWatch;
     }
     public Button getbAlarm() {
-        return bAlarm;
+        return alAlarm.getButton();
     }
     public Button getbResetAll() {
         return bResetAll;

@@ -15,20 +15,22 @@ public class Alarm implements Runnable {
     public void run() {
 
     }
-
+/**
+ * Constructors Block
+ * */
     public Alarm(){
         lbAlarm = new Label("doAlarm: ");
         btAlarm = new Button();
         btAlarm.setAlarmButton (lbAlarm);
     }
-/*
-   wrapers block
+/**
+ *    wripers block
  */
     public void runUpdate(){
         lbAlarm.updateLabel();
     }
-/*
-Geters and Seters
+/**
+ * Geters and Seters block
 */
     public Label getLabel() {
         return lbAlarm;

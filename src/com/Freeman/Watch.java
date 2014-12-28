@@ -6,7 +6,9 @@ import javax.swing.*;
  * Created by BuYn on 09.12.2014.
  */
 public class Watch {
-    //Integer block
+    /**
+     * Inicialisation block
+     * */
     public int iTime = 0;
     private String  sTime;
     private String sText = "Sekunds: ";
@@ -14,7 +16,9 @@ public class Watch {
     private JLabel jlWatch;
     //doTime block
     Timer tTime;
-    //Constructor block
+/**
+   * Constructor block
+ */
     public Watch(){
         tTime =new Timer();
         sTime = tTime.getFormatedTime();
@@ -26,7 +30,9 @@ public class Watch {
         sTime = tTime.getFormatedTime();
         jlWatch = new JLabel(sText + sTime);
     }
-    //mettods block
+    /**
+     *  mettods block
+     */
     public int doTime(){
         sTime = tTime.getFormatDeltaTime();
         updateLabel();
@@ -55,12 +61,18 @@ public class Watch {
     public void updateLabel(){
         jlWatch.setText(sText + sTime);
     }
-    //Seters Block
+
+    /** Seters Block
+     * @param sNewText
+     */
     public void setText(String sNewText){
         sText = sNewText;
         updateLabel();
     }
-    //    geters block
+    /**
+     *  geters block
+     * @return
+     */
     public Timer getTimer() {
         return tTime;
     }
