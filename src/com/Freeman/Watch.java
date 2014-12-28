@@ -4,79 +4,44 @@ import javax.swing.*;
 
 /**
  * Created by BuYn on 09.12.2014.
+ * todo runable
+ * todo create label and button
  */
-public class Watch {
-    /**
-     * Inicialisation block
-     * */
-    public int iTime = 0;
-    private String  sTime;
-    private String sText = "Sekunds: ";
-    //labels block
-    private JLabel jlWatch;
-    //doTime block
-    Timer tTime;
-/**
-   * Constructor block
- */
-    public Watch(){
-        tTime =new Timer();
-        sTime = tTime.getFormatedTime();
-        jlWatch = new JLabel(sText + sTime);
-    }
-    public Watch(String sNewText){
-        sText=sNewText;
-        tTime =new Timer();
-        sTime = tTime.getFormatedTime();
-        jlWatch = new JLabel(sText + sTime);
-    }
-    /**
-     *  mettods block
-     */
-    public int doTime(){
-        sTime = tTime.getFormatDeltaTime();
-        updateLabel();
-        return iTime;
-    }
-    public int resetTime(){
-        tTime.setToZeroStart();
-        updateLabel();
-        return iTime;
-    }
-    public int resetAlarm(int iMinuts){
-        tTime.setAlarm(iMinuts);
-        updateLabel();
-        return iTime;
-    }
-    public int resetAlarm(){
-        tTime.setAlarm();
-        updateLabel();
-        return iTime;
-    }
-    public int doAlarm(){
-        sTime = tTime.getFormatTimeLeft();
-        updateLabel();
-        return iTime;
-    }
-    public void updateLabel(){
-        jlWatch.setText(sText + sTime);
-    }
+public class Watch  implements Runnable {
+    Label   lbAlarm;
+    Button  btAlarm;
 
-    /** Seters Block
-     * @param sNewText
-     */
-    public void setText(String sNewText){
-        sText = sNewText;
-        updateLabel();
+    @Override
+    public void run() {
+
     }
     /**
-     *  geters block
-     * @return
-     */
-    public Timer getTimer() {
-        return tTime;
+     * Constructors Block
+     * */
+    public Watch(){
+        lbAlarm = new Label("doAlarm: ");
+        btAlarm = new Button();
+        btAlarm.setAlarmButton (lbAlarm);
     }
-    public JLabel getLabel() {
-        return jlWatch;
+    /**
+     *    wripers block
+     */
+    public void runUpdate(){
+        lbAlarm.updateLabel();
+    }
+    /**
+     * Geters and Seters block
+     */
+    public Label getLabel() {
+        return lbAlarm;
+    }
+    public JLabel getJLabel() {
+        return lbAlarm.getLabel();
+    }
+    public Button getButton() {
+        return btAlarm;
+    }
+    public JButton getJButton() {
+        return btAlarm.getAlarm();
     }
 }

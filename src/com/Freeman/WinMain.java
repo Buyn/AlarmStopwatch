@@ -8,10 +8,8 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-//    private Label lbAlarm;
     private Label lbWatch;
     private Button bResetAll;
-//    private Button bAlarm;
     private Button bWatch;
     private Alarm alAlarm;
 
@@ -32,7 +30,6 @@ public class WinMain extends JFrame{
 //        setTable();
     }
     private void setLabels(){
-//        lbAlarm = alAlarm.getLabel();
         lbWatch = new Label();
         JPanel jpLabels = new JPanel();
         jpLabels.add(lbWatch.getLabel());
@@ -45,8 +42,6 @@ public class WinMain extends JFrame{
         bResetAll.setResetAllButton(lbWatch, alAlarm.getLabel());
         add(bResetAll.getResetAll());
         //create buttons for panell
-//        bAlarm = new Button();
-//        bAlarm.setAlarmButton (lbAlarm);
         bWatch = new Button();
         bWatch.setWatchButton (lbWatch);
         //add to panel
