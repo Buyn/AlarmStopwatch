@@ -29,7 +29,7 @@ public class Alarm implements Runnable {
         btAlarm.setAlarmButton (lbAlarm);
     }
 /**
- *    wripers block
+ *    wrapers block
  */
     public void runUpdate(){
         lbAlarm.doAlarm();

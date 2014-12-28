@@ -15,7 +15,6 @@ public class Button {
     //Labels Block
     private Label lbWatch;
     private Label lbAlarm;
-//todo must retern buttons on set
     //Metods Block
     public JButton setResetAllButton(Label lbNewWatch, Label lbNewAlarm){
         this.lbAlarm = lbNewAlarm;
@@ -47,6 +46,7 @@ public class Button {
         jbAlarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lbAlarm.resetAlarm();
+                lbAlarm.updateLabel();
             }
         });
         return jbAlarm;

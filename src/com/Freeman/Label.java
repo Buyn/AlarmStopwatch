@@ -7,7 +7,6 @@ import javax.swing.*;
  */
 public class Label {
     //Integer block
-        public int iTime = 0;
         private String  sTime;
         private String sText = "Sekunds: ";
         //labels block
@@ -27,30 +26,25 @@ public class Label {
             jlWatch = new JLabel(sText + sTime);
         }
         //mettods block
-    public int doTime(){
+    public void doTime(){
         sTime = tTime.getFormatDeltaTime();
         updateLabel();
-        return iTime;
     }
-    public int resetTime(){
+    public void resetTime(){
         tTime.setToZeroStart();
         updateLabel();
-        return iTime;
     }
-    public int resetAlarm(int iMinuts){
+    public void resetAlarm(int iMinuts){
         tTime.setAlarm(iMinuts);
         updateLabel();
-        return iTime;
     }
-    public int resetAlarm(){
+    public void resetAlarm(){
         tTime.setAlarm();
         updateLabel();
-        return iTime;
     }
-    public int doAlarm(){
+    public void doAlarm(){
         sTime = tTime.getFormatTimeLeft();
         updateLabel();
-        return iTime;
     }
     public void updateLabel(){
         jlWatch.setText(sText + sTime);
