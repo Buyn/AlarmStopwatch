@@ -25,6 +25,7 @@ public class Alarm implements Runnable {
  *    wripers block
  */
     public void runUpdate(){
+
         lbAlarm.updateLabel();
     }
 /**

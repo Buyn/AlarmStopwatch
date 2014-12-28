@@ -46,7 +46,7 @@ public class Button {
         jbAlarm = new JButton("Set Alarm");
         jbAlarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lbAlarm.doAlarm();
+                lbAlarm.resetAlarm();
             }
         });
         return jbAlarm;
