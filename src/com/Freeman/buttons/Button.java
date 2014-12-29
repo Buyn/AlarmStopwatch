@@ -1,4 +1,8 @@
-package com.Freeman;
+package com.Freeman.buttons;
+
+import com.Freeman.Alarm;
+import com.Freeman.Label;
+import com.Freeman.Watch;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

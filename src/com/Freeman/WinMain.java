@@ -8,7 +8,7 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-    private Button bResetAll;
+    private com.Freeman.buttons.Button bResetAll;
     private Alarm alAlarm;
     private Watch waWatch;
 
@@ -37,8 +37,8 @@ public class WinMain extends JFrame{
         add(jpLabels, BorderLayout.NORTH);
     }
     private void setButtons(){
-        //set reset button
-        bResetAll = new Button();
+        //set reset buttons
+        bResetAll = new com.Freeman.buttons.Button();
         bResetAll.setResetAllButton(waWatch.getLabel(), alAlarm.getLabel());
         add(bResetAll.getResetAll());
         //add to panel
@@ -63,10 +63,10 @@ public class WinMain extends JFrame{
     public Label getLbAlarm() {
         return alAlarm.getLabel();
     }
-    public Button getbWatch() {
+    public com.Freeman.buttons.Button getbWatch() {
         return waWatch.getButton();
     }
-    public Button getbAlarm() {
+    public com.Freeman.buttons.Button getbAlarm() {
         return alAlarm.getButton();
     }
     public Alarm getAlarm() {
@@ -75,7 +75,7 @@ public class WinMain extends JFrame{
     public Watch getWatch() {
         return waWatch;
     }
-    public Button getbResetAll() {
+    public com.Freeman.buttons.Button getbResetAll() {
         return bResetAll;
     }
 }

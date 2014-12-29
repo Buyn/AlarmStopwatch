@@ -1,6 +1,5 @@
-package com.Freeman.button;
+package com.Freeman.buttons;
 
-import com.Freeman.Button;
 import com.Freeman.Label;
 
 import javax.swing.*;

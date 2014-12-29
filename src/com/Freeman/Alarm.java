@@ -1,4 +1,6 @@
 package com.Freeman;
+import com.Freeman.buttons.Button;
+
 import javax.swing.*;
 
 /**

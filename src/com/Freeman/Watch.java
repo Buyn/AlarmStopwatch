@@ -1,16 +1,18 @@
 package com.Freeman;
 
+import com.Freeman.buttons.Button;
+
 import javax.swing.*;
 
 /**
  * Created by BuYn on 09.12.2014.
- * todo raname button
+ * todo raname buttons
  * todo set Text
  * todo
  */
 public class Watch  implements Runnable {
     Label   lbWatch;
-    Button  btWatch;
+    Button btWatch;
     Timer   tTime;
 
     @Override
