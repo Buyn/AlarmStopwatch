@@ -37,20 +37,6 @@ public class Button {
         });
         return jbResetAll;
     }
-    public JButton setResetAllButton(Alarm alNewAlarm, Watch wtNewWatch){
-        this.alAlarm=   alNewAlarm;
-        this.wtWatch =  wtNewWatch;
-        jbResetAll = new JButton("Reset All");
-        jbResetAll.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                alAlarm.resetAlarm();
-                alAlarm.runUpdate();
-                wtWatch.resetTime();
-                wtWatch.runUpdate();
-            }
-        });
-        return jbResetAll;
-    }
     public JButton setWatchButton(Label lNewWatch){
         this.lbWatch = lNewWatch;
         jbStopWatch = new JButton("Start");
