@@ -1,6 +1,7 @@
 package com.Freeman.buttons;
 
-import com.Freeman.Label;
+import com.Freeman.Alarm;
+import com.Freeman.Watch;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -9,23 +10,27 @@ import java.awt.event.ActionListener;
  * Created by BuYn on 07.12.2014.
  */
 public class BttnStopwatch extends Button{
-    //Buttons Block
-    private JButton jbStopWatch;
-    //Labels Block
-    private Label lbWatch;
+    private JButton jbResetAll;
     //Metods Block
-    public JButton setWatchButton(Label lNewWatch){
-        this.lbWatch = lNewWatch;
-        jbStopWatch = new JButton("Start");
+    public JButton setResetAllButton(Alarm alNewAlarm, Watch wtNewWatch) {
+        alAlarm = alNewAlarm;
+        wtWatch = wtNewWatch;
+        this.jbStopWatch = new JButton("Reset All");
         jbStopWatch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lbWatch.doTime();
+                alAlarm.resetAlarm();
+                alAlarm.runUpdate();
+                wtWatch.resetTime();
+                wtWatch.runUpdate();
             }
         });
-        return jbStopWatch;
+        return jbResetAll;
     }
     //Geters block
-    public JButton getStopWatch() {
+    public JButton getJbStopWatch() {
         return jbStopWatch;
+    }
+    public void setJbResetAll(JButton jbResetAll) {
+        this.jbResetAll = jbResetAll;
     }
 }

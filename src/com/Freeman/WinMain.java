@@ -1,5 +1,7 @@
 package com.Freeman;
 
+import com.Freeman.buttons.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,8 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-    private com.Freeman.buttons.Button bResetAll;
+//    private com.Freeman.buttons.Button bResetAll;
+    private BttnResetAll bResetAll;
     private Alarm alAlarm;
     private Watch waWatch;
 
@@ -38,9 +41,11 @@ public class WinMain extends JFrame{
     }
     private void setButtons(){
         //set reset buttons
-        bResetAll = new com.Freeman.buttons.Button();
-        bResetAll.setResetAllButton(waWatch.getLabel(), alAlarm.getLabel());
-        add(bResetAll.getResetAll());
+//        bResetAll = new com.Freeman.buttons.Button();
+        bResetAll = new BttnResetAll(alAlarm , waWatch);
+
+//        bResetAll.setResetAllButton(waWatch.getLabel(), alAlarm.getLabel());
+        add(bResetAll.getJResetAll());
         //add to panel
         JPanel jpButtons = new JPanel();
         jpButtons.add(waWatch.getJButton());

@@ -14,14 +14,14 @@ import java.awt.event.ActionListener;
 public class Button {
     //Buttons Block
     private JButton jbResetAll;
-    private JButton jbStopWatch;
-    private JButton jbAlarm;
+    protected JButton jbStopWatch;
+    protected JButton jbAlarm;
     //Labels Block
     private Label lbWatch;
     private Label lbAlarm;
     //
-    private Alarm alAlarm;
-    private Watch wtWatch;
+    protected Alarm alAlarm;
+    protected Watch wtWatch;
     //Metods Block
     public JButton setResetAllButton(Label lbNewWatch, Label lbNewAlarm){
         this.lbAlarm = lbNewAlarm;
@@ -76,12 +76,23 @@ public class Button {
     public JButton getAlarm() {
         return jbAlarm;
     }
-
     public JButton getStopWatch() {
         return jbStopWatch;
     }
-
     public JButton getResetAll() {
         return jbResetAll;
+    }
+    //setter block
+    public void setAlAlarm(Alarm alAlarm) {
+        this.alAlarm = alAlarm;
+    }
+    public void setWtWatch(Watch wtWatch)
+
+
+    {
+        this.wtWatch = wtWatch;
+    }
+    public void setJStopWatch(JButton jbStopWatch) {
+        this.jbStopWatch = jbStopWatch;
     }
 }
