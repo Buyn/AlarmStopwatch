@@ -13,9 +13,8 @@ import java.awt.event.ActionListener;
  */
 public class Button {
     //Buttons Block
-    private JButton jbResetAll;
-    protected JButton jbStopWatch;
-    protected JButton jbAlarm;
+    private JButton jbStopWatch;
+    private JButton jbAlarm;
     //Labels Block
     private Label lbWatch;
     private Label lbAlarm;
@@ -23,20 +22,6 @@ public class Button {
     protected Alarm alAlarm;
     protected Watch wtWatch;
     //Metods Block
-    public JButton setResetAllButton(Label lbNewWatch, Label lbNewAlarm){
-        this.lbAlarm = lbNewAlarm;
-        this.lbWatch = lbNewWatch;
-        jbResetAll = new JButton("Reset All");
-        jbResetAll.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                lbAlarm.resetAlarm();
-                lbAlarm.doAlarm();
-                lbWatch.resetTime();
-                lbWatch.doTime();
-            }
-        });
-        return jbResetAll;
-    }
     public JButton setWatchButton(Label lNewWatch){
         this.lbWatch = lNewWatch;
         jbStopWatch = new JButton("Start");
@@ -64,9 +49,6 @@ public class Button {
     }
     public JButton getStopWatch() {
         return jbStopWatch;
-    }
-    public JButton getResetAll() {
-        return jbResetAll;
     }
     //setter block
     public void setAlAlarm(Alarm alAlarm) {

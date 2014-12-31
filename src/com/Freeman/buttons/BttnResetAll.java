@@ -17,8 +17,8 @@ public class BttnResetAll extends Button {
     public  BttnResetAll(Alarm alNewAlarm, Watch wtNewWatch) {
         alAlarm = alNewAlarm;
         wtWatch = wtNewWatch;
-        this.jbStopWatch = new JButton("Reset All");
-        jbStopWatch.addActionListener(new ActionListener() {
+        this.jbResetAll = new JButton("Reset All");
+        jbResetAll.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 alAlarm.resetAlarm();
                 alAlarm.runUpdate();
@@ -29,7 +29,7 @@ public class BttnResetAll extends Button {
     }
     //Geters block
     public JButton getJResetAll() {
-        return jbStopWatch;
+        return jbResetAll;
     }
     public void setJResetAll(JButton jbResetAll) {
         this.jbResetAll = jbResetAll;

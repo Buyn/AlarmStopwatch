@@ -10,7 +10,6 @@ import java.awt.*;
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-//    private com.Freeman.buttons.Button bResetAll;
     private BttnResetAll bResetAll;
     private Alarm alAlarm;
     private Watch waWatch;
@@ -33,7 +32,6 @@ public class WinMain extends JFrame{
 //        setTable();
     }
     private void setLabels(){
-//        lbWatch = new Label();
         JPanel jpLabels = new JPanel();
         jpLabels.add(waWatch.getJLabel());
         jpLabels.add(alAlarm.getJLabel());
@@ -41,10 +39,7 @@ public class WinMain extends JFrame{
     }
     private void setButtons(){
         //set reset buttons
-//        bResetAll = new com.Freeman.buttons.Button();
         bResetAll = new BttnResetAll(alAlarm , waWatch);
-
-//        bResetAll.setResetAllButton(waWatch.getLabel(), alAlarm.getLabel());
         add(bResetAll.getJResetAll());
         //add to panel
         JPanel jpButtons = new JPanel();
@@ -68,9 +63,10 @@ public class WinMain extends JFrame{
     public Label getLbAlarm() {
         return alAlarm.getLabel();
     }
-    public com.Freeman.buttons.Button getbWatch() {
-        return waWatch.getButton();
-    }
+//    public com.Freeman.buttons.Button getbWatch() {
+//        return waWatch.getButton();
+//    }
+
     public com.Freeman.buttons.Button getbAlarm() {
         return alAlarm.getButton();
     }

@@ -1,5 +1,6 @@
 package com.Freeman;
 
+import com.Freeman.buttons.BttnStopwatch;
 import com.Freeman.buttons.Button;
 
 import javax.swing.*;
@@ -12,8 +13,10 @@ import javax.swing.*;
  */
 public class Watch  implements Runnable {
     Label   lbWatch;
-    Button btWatch;
+//    Button btWatch;
     Timer   tTime;
+    BttnStopwatch btStopwatch;
+    boolean bPause = false;
 
     @Override
     public void run() {
@@ -31,11 +34,12 @@ public class Watch  implements Runnable {
      * */
     public Watch(){
         lbWatch = new Label();
-        btWatch = new Button();
+//        btWatch = new Button();
         tTime = new Timer();
         lbWatch.setTime(tTime.getFormatedTime());
         runUpdate();
-        btWatch.setWatchButton(lbWatch);
+        btStopwatch = new BttnStopwatch(this);
+//        btWatch.setWatchButton(lbWatch);
     }
  /**
   * Metods Block
@@ -44,6 +48,20 @@ public class Watch  implements Runnable {
         lbWatch.setTime(tTime.getFormatDeltaTime());
         lbWatch.updateLabel();
     }
+    public void trigerPause(){
+        if (bPause) unPause();
+        setPause();
+    }
+    public void setPause(){
+        bPause = true;
+        //set Button Texr
+    }
+    public void unPause(){
+        bPause = false;
+        //set Button Texr
+    }
+
+
     public void resetTime(){
         tTime.setToZeroStart();
         runUpdate();
@@ -57,13 +75,17 @@ public class Watch  implements Runnable {
     public JLabel getJLabel() {
         return lbWatch.getJLabel();
     }
-    public Button getButton() {
-        return btWatch;
-    }
+//    public Button getButton() {
+//        return btWatch;
+//    }
     public JButton getJButton() {
-        return btWatch.getStopWatch();
+        return btStopwatch.getJButton();
+    }
+    public BttnStopwatch getBtStopwatch() {
+        return btStopwatch;
     }
     public Timer getTimer() {
         return tTime;
     }
+
 }
