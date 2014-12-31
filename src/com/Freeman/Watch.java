@@ -13,7 +13,6 @@ import javax.swing.*;
  */
 public class Watch  implements Runnable {
     Label   lbWatch;
-//    Button btWatch;
     Timer   tTime;
     BttnStopwatch btStopwatch;
     boolean bPause = false;
@@ -34,12 +33,10 @@ public class Watch  implements Runnable {
      * */
     public Watch(){
         lbWatch = new Label();
-//        btWatch = new Button();
         tTime = new Timer();
         lbWatch.setTime(tTime.getFormatedTime());
         runUpdate();
         btStopwatch = new BttnStopwatch(this);
-//        btWatch.setWatchButton(lbWatch);
     }
  /**
   * Metods Block
@@ -75,13 +72,10 @@ public class Watch  implements Runnable {
     public JLabel getJLabel() {
         return lbWatch.getJLabel();
     }
-//    public Button getButton() {
-//        return btWatch;
-//    }
     public JButton getJButton() {
         return btStopwatch.getJButton();
     }
-    public BttnStopwatch getBtStopwatch() {
+    public BttnStopwatch getButton() {
         return btStopwatch;
     }
     public Timer getTimer() {

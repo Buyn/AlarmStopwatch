@@ -57,16 +57,6 @@ public class WinMain extends JFrame{
         add(table);
     }
 
-    public Label getLbWatch() {
-        return waWatch.getLabel();
-    }
-    public Label getLbAlarm() {
-        return alAlarm.getLabel();
-    }
-//    public com.Freeman.buttons.Button getbWatch() {
-//        return waWatch.getButton();
-//    }
-
     public com.Freeman.buttons.Button getbAlarm() {
         return alAlarm.getButton();
     }
