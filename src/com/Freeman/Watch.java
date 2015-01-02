@@ -7,9 +7,6 @@ import javax.swing.*;
 
 /**
  * Created by BuYn on 09.12.2014.
- * todo raname buttons
- * todo set Text
- * todo
  */
 public class Watch  implements Runnable {
     Label   lbWatch;

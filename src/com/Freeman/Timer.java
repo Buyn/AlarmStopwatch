@@ -19,7 +19,6 @@ public class Timer {
     private SimpleDateFormat sdf;
 //    End of Intedger Block
 // Bagen of Constructors block
-
     public Timer(){
         sdf = new SimpleDateFormat("HH:mm:ss");
         lStart = System.currentTimeMillis();
@@ -29,7 +28,7 @@ public class Timer {
     }
     public Timer(int iMinuts) {
         lStart = System.currentTimeMillis();
-        lSet = lStart +     (iMinuts * MINUTS);
+        lSet = lStart + (iMinuts * MINUTS);
         sdf = new SimpleDateFormat("HH:mm:ss");
     }
     //    end of Constructors block
