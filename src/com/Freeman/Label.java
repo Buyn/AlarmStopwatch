@@ -26,18 +26,6 @@ public class Label {
             jlWatch = new JLabel(sText + sTime);
         }
         //mettods block
-    public void doTime(){
-        sTime = tTime.getFormatDeltaTime();
-        updateLabel();
-    }
-    public void resetTime(){
-        tTime.setToZeroStart();
-        updateLabel();
-    }
-    public void resetAlarm(int iMinuts){
-        tTime.setAlarm(iMinuts);
-        updateLabel();
-    }
     public void resetAlarm(){
         tTime.setAlarm();
         updateLabel();

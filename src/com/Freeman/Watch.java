@@ -20,7 +20,7 @@ public class Watch  implements Runnable {
     @Override
     public void run() {
         while (true) {
-            runUpdate();
+            if (!bPause) runUpdate();
             try {
                 Thread.sleep(Timer.SEKUNDS);
             } catch (InterruptedException ex) {
@@ -46,19 +46,22 @@ public class Watch  implements Runnable {
         lbWatch.updateLabel();
     }
     public void trigerPause(){
-        if (bPause) unPause();
+        if (bPause) {
+            unPause();
+            return;
+        }
         setPause();
     }
     public void setPause(){
         bPause = true;
-        //set Button Texr
+        btStopwatch.setTextToButton("Start");
+        tTime.setPause();
     }
     public void unPause(){
         bPause = false;
-        //set Button Texr
+        tTime.unPause();
+        btStopwatch.setTextToButton("Pause");
     }
-
-
     public void resetTime(){
         tTime.setToZeroStart();
         runUpdate();

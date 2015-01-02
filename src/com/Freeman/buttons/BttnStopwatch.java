@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
  */
 public class BttnStopwatch extends Button{
     private JButton jbStopWatch;
-    //Metods Block
+
     public BttnStopwatch(Watch wtNewWatch){
         super.wtWatch = wtNewWatch;
-        jbStopWatch = new JButton("Start");
+        jbStopWatch = new JButton("Pause");
         jbStopWatch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 wtWatch.trigerPause();
@@ -21,8 +21,11 @@ public class BttnStopwatch extends Button{
             }
         });
     }
+    //Metods Block
+    public void setTextToButton(String sText){
+    jbStopWatch.setText(sText);
+    }
     //Geters block
-
     public JButton getJButton() {
         return jbStopWatch;
     }

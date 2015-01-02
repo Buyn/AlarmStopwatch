@@ -12,9 +12,10 @@ public class Timer {
     public static int HOURS = MINUTS * 60;
     public static int UA = HOURS * 2;
     public static int DEFAULT_ALARM = 9;
-    //INTEGER
+    //INECEALISATION
     private long lStart = 0;
-    private long lSet = 0;
+    private long lSet   = 0;
+    private long lPause = 0;
     private SimpleDateFormat sdf;
 //    End of Intedger Block
 // Bagen of Constructors block
@@ -26,7 +27,6 @@ public class Timer {
         System.out.println("lMinuts = " + lMinuts);
         lSet = lStart + (DEFAULT_ALARM * MINUTS);
     }
-
     public Timer(int iMinuts) {
         lStart = System.currentTimeMillis();
         lSet = lStart +     (iMinuts * MINUTS);
@@ -49,38 +49,46 @@ public class Timer {
         return lSet - getNow();
     }
     public String getFormatDeltaTime(){
-        return formatLong(getDeltaTime());
-    }
+        return formatLong(getDeltaTime());}
     public long getDeltaTime() {
-        return getNow() - lStart;
+        return getNow() - lStart + lPause;
     }
     public String getFormatedTime(){
         return formatLong(getNow());
+    }
+    public void setPause(){
+        lPause = getNow() - lStart + lPause;
+        lStart = getNow();
+    }
+    public void unPause(){
+        lStart = getNow();
     }
 //    End of Metods block
 //  seters and geters
     public void setToZeroStart(){
         lStart = getNow();
+        lPause = 0;
     }
-
     public void setAlarm() {
         lSet = getNow() + (DEFAULT_ALARM * MINUTS);
     }
-
-    public long getAlarm() {
-        return lSet;
-    }
-
     public void setAlarm(int iMinuts) {
         lSet = getNow() + (iMinuts * MINUTS);
     }
-
-    public long getStart() {
-        return lStart;
-    }
-
     public void setStart(long dStart) {
         this.lStart = dStart;
+    }
+    public void setPause(long lPause) {
+        this.lPause = lPause;
+    }
+    public long getPause() {
+        return lPause;
+    }
+    public long getAlarm() {
+        return lSet;
+    }
+    public long getStart() {
+        return lStart;
     }
 
 }

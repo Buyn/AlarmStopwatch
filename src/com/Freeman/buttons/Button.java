@@ -31,6 +31,7 @@ public class Button {
         });
         return jbAlarm;
     }
+
     //Geters block
     public JButton getAlarm() {
         return jbAlarm;
