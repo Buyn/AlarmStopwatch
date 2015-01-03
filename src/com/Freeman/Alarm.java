@@ -1,4 +1,5 @@
 package com.Freeman;
+import com.Freeman.buttons.BttnAlarm;
 import com.Freeman.buttons.Button;
 
 import javax.swing.*;
@@ -8,7 +9,7 @@ import javax.swing.*;
  */
 public class Alarm implements Runnable {
     Label lbAlarm;
-    Button btAlarm;
+    BttnAlarm btAlarm;
     Timer tTime;
 
     @Override
@@ -22,19 +23,17 @@ public class Alarm implements Runnable {
             }
         }
     }
-
     /**
      * Constructors Block
      */
     public Alarm() {
         lbAlarm = new Label("Alarm: ");
-        btAlarm = new Button();
         tTime = new Timer();
         lbAlarm.setTime(tTime.getFormatedTime());
         runUpdate();
-        btAlarm.setAlarmButton(lbAlarm);
+        btAlarm = new BttnAlarm(this);
+//        btAlarm = new BttnAlarm(lbAlarm);
     }
-
     /**
      * Metods block
      */
@@ -63,7 +62,7 @@ public class Alarm implements Runnable {
         return btAlarm;
     }
     public JButton getJButton() {
-        return btAlarm.getAlarm();
+        return btAlarm.getJButton();
     }
     public Timer getTimer() {
         return tTime;

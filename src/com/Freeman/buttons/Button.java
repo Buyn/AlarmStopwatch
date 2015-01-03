@@ -11,42 +11,21 @@ import java.awt.event.ActionListener;
 /**
  * Created by BuYn on 07.12.2014.
  */
-public class Button {
+public abstract class Button {
     //Buttons Block
-    private JButton jbAlarm;
     //Labels Block
-    private Label lbAlarm;
     //
     protected Alarm alAlarm;
     protected Watch wtWatch;
-    //Metods Block
-    public JButton setAlarmButton(Label lbNewAlarm){
-        this.lbAlarm = lbNewAlarm;
-        jbAlarm = new JButton("Set Alarm");
-        jbAlarm.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                lbAlarm.resetAlarm();
-                lbAlarm.doAlarm();
-            }
-        });
-        return jbAlarm;
-    }
-
-    //Geters block
-    public JButton getAlarm() {
-        return jbAlarm;
-    }
     //setter block
     public void setAlAlarm(Alarm alAlarm) {
         this.alAlarm = alAlarm;
     }
-    public void setWtWatch(Watch wtWatch)
-
-
-    {
+    public void setWtWatch(Watch wtWatch){
         this.wtWatch = wtWatch;
     }
-
+    //Metods Block
+    //Geters block
     public Alarm getAlAlarm() {
         return alAlarm;
     }

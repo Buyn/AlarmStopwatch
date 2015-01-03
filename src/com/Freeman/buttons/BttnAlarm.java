@@ -1,5 +1,6 @@
 package com.Freeman.buttons;
 
+import com.Freeman.Alarm;
 import com.Freeman.Label;
 
 import javax.swing.*;
@@ -13,21 +14,21 @@ public class BttnAlarm extends Button {
     //Buttons Block
     private JButton jbAlarm;
     //Labels Block
-    private Label lbAlarm;
+//    private Label lbAlarm;
 //todo must retern buttons on set
     //Metods Block
-    public JButton setAlarmButton(Label lbNewAlarm){
-        this.lbAlarm = lbNewAlarm;
-        jbAlarm = new JButton("Set doAlarm");
+    public  BttnAlarm(Alarm alNewAlarm){
+        alAlarm = alNewAlarm;
+        jbAlarm = new JButton("Set Alarm");
         jbAlarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lbAlarm.doAlarm();
+                alAlarm.resetAlarm();
+                alAlarm.runUpdate();
             }
         });
-        return jbAlarm;
     }
     //Geters block
-    public JButton getAlarm() {
+    public JButton getJButton() {
         return jbAlarm;
     }
 
