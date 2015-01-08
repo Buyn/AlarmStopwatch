@@ -17,6 +17,7 @@ public class Alarm implements Runnable {
     public void run() {
         while (true) {
             runUpdate();
+
             try {
                 Thread.sleep(Timer.SEKUNDS);
             } catch (InterruptedException ex) {
@@ -42,6 +43,9 @@ public class Alarm implements Runnable {
         lbAlarm.setTime(tTime.getFormatTimeLeft());
         lbAlarm.updateLabel();
     }
+    public boolean isAlarm (){
+        return true;
+    }
     public void resetAlarm(int iMinuts) {
         tTime.setAlarm(iMinuts);
         lbAlarm.updateLabel();
@@ -49,12 +53,10 @@ public class Alarm implements Runnable {
     public void resetAlarm() {
         tTime.setAlarm();
         lbAlarm.updateLabel();
-        playSound();
     }
 
     public void playSound(){
         Thread thSound = new Thread(asSound);
-        System.out.println("Alarm.playSound");
         thSound.start();
     }
     /**
