@@ -17,7 +17,10 @@ public class Alarm implements Runnable {
     public void run() {
         while (true) {
             runUpdate();
-
+            if (isAlarmSetoff()){
+                playSound();
+                resetAlarm(1);
+            }
             try {
                 Thread.sleep(Timer.SEKUNDS);
             } catch (InterruptedException ex) {
@@ -43,8 +46,9 @@ public class Alarm implements Runnable {
         lbAlarm.setTime(tTime.getFormatTimeLeft());
         lbAlarm.updateLabel();
     }
-    public boolean isAlarm (){
-        return true;
+    public boolean isAlarmSetoff (){
+        if (tTime.getTimeLeft() <= 500) return true;
+        return false;
     }
     public void resetAlarm(int iMinuts) {
         tTime.setAlarm(iMinuts);
