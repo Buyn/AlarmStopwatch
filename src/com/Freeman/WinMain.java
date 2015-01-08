@@ -44,9 +44,7 @@ public class WinMain extends JFrame{
         //add to panel
         JPanel jpButtons = new JPanel();
         jpButtons.add(waWatch.getJButton());
-        System.out.println("WinMain.setButtons -4");
         jpButtons.add(alAlarm.getJButton());
-        System.out.println("WinMain.setButtons -5");
         add(jpButtons, BorderLayout.SOUTH);
     }
     private void setTable (){

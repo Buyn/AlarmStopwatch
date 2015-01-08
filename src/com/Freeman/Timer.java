@@ -23,7 +23,6 @@ public class Timer {
         sdf = new SimpleDateFormat("HH:mm:ss");
         lStart = System.currentTimeMillis();
         long lMinuts =   MINUTS *9;
-        System.out.println("lMinuts = " + lMinuts);
         lSet = lStart + (DEFAULT_ALARM * MINUTS);
     }
     public Timer(int iMinuts) {

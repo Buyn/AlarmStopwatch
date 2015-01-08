@@ -11,6 +11,7 @@ public class Alarm implements Runnable {
     Label lbAlarm;
     BttnAlarm btAlarm;
     Timer tTime;
+    AlarmSound asSound ;
 
     @Override
     public void run() {
@@ -27,12 +28,12 @@ public class Alarm implements Runnable {
      * Constructors Block
      */
     public Alarm() {
+        asSound = new AlarmSound();
         lbAlarm = new Label("Alarm: ");
         tTime = new Timer();
         lbAlarm.setTime(tTime.getFormatedTime());
         runUpdate();
         btAlarm = new BttnAlarm(this);
-//        btAlarm = new BttnAlarm(lbAlarm);
     }
     /**
      * Metods block
@@ -48,6 +49,13 @@ public class Alarm implements Runnable {
     public void resetAlarm() {
         tTime.setAlarm();
         lbAlarm.updateLabel();
+        playSound();
+    }
+
+    public void playSound(){
+        Thread thSound = new Thread(asSound);
+        System.out.println("Alarm.playSound");
+        thSound.start();
     }
     /**
      * Geters and Seters block
