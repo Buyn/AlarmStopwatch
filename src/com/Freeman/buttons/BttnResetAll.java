@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
  * Created by BuYn on 07.12.2014.
  */
 public class BttnResetAll extends Button {
-//    private JButton jButton;
     //Metods Block
     public  BttnResetAll(Alarm alNewAlarm, Watch wtNewWatch) {
         alAlarm = alNewAlarm;
@@ -27,8 +26,5 @@ public class BttnResetAll extends Button {
         });
     }
     //Geters block
-//    public JButton getjButton() {
-//        return jButton;
-//    }
 
 }

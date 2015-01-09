@@ -11,10 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class BttnAlarm extends Button {
     //Buttons Block
-//    private JButton jButton;
     //Labels Block
-//    private Label lbAlarm;
-//todo must retern buttons on set
     //Metods Block
     public  BttnAlarm(Alarm alNewAlarm){
         alAlarm = alNewAlarm;
@@ -27,8 +24,4 @@ public class BttnAlarm extends Button {
         });
     }
     //Geters block
-//    public JButton getjButton() {
-//        return jButton;
-//    }
-
 }
