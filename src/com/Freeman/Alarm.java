@@ -76,7 +76,7 @@ public class Alarm implements Runnable {
         return btAlarm;
     }
     public JButton getJButton() {
-        return btAlarm.getJButton();
+        return btAlarm.getjButton();
     }
     public Timer getTimer() {
         return tTime;

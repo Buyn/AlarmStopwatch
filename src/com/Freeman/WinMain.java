@@ -35,13 +35,12 @@ public class WinMain extends JFrame{
         JPanel jpLabels = new JPanel();
         jpLabels.add(waWatch.getJLabel());
         jpLabels.add(alAlarm.getJLabel());
-//        add(jpLabels, BorderLayout.NORTH);
         add(jpLabels);
     }
     private void setButtons(){
         //set reset buttons
         bResetAll = new BttnResetAll(alAlarm , waWatch);
-        add(bResetAll.getJResetAll(), BorderLayout.NORTH);
+        add(bResetAll.getjButton(), BorderLayout.NORTH);
         //add to panel
         JPanel jpButtons = new JPanel();
         jpButtons.add(waWatch.getJButton());

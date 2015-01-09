@@ -13,23 +13,18 @@ import java.awt.event.ActionListener;
  */
 public abstract class Button {
     //Buttons Block
+    protected JButton jButton;
     //Labels Block
     //
     protected Alarm alAlarm;
     protected Watch wtWatch;
-    //setter block
-    public void setAlAlarm(Alarm alAlarm) {
-        this.alAlarm = alAlarm;
-    }
-    public void setWtWatch(Watch wtWatch){
-        this.wtWatch = wtWatch;
-    }
     //Metods Block
-    //Geters block
-    public Alarm getAlAlarm() {
-        return alAlarm;
+    public void setTextToButton(String sText){
+        jButton.setText(sText);
     }
-    public Watch getWatch() {
-        return wtWatch;
+    //setter block
+    //Geters block
+    public JButton getjButton() {
+        return jButton;
     }
 }

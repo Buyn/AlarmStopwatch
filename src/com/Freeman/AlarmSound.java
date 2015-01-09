@@ -9,7 +9,7 @@ import java.io.File;
  * Created by BuYn on 08.01.2015.
  */
 public class AlarmSound implements Runnable {
-    String sUrl = "alarm.wav";
+    String sUrl = "/alarm.wav";
 
 
     @Override
@@ -21,7 +21,7 @@ public class AlarmSound implements Runnable {
         try {
             Clip clip = AudioSystem.getClip();
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                    new File("/alarm.wav"));
+                    new File(sUrl));
             clip.open(inputStream);
             clip.start();
         } catch (Exception e) {

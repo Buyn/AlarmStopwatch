@@ -9,12 +9,12 @@ import java.awt.event.ActionListener;
  * Created by BuYn on 07.12.2014.
  */
 public class BttnStopwatch extends Button{
-    private JButton jbStopWatch;
+//    private JButton jButton;
 
     public BttnStopwatch(Watch wtNewWatch){
         super.wtWatch = wtNewWatch;
-        jbStopWatch = new JButton("Pause");
-        jbStopWatch.addActionListener(new ActionListener() {
+        jButton = new JButton("Pause");
+        jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 wtWatch.trigerPause();
                 wtWatch.runUpdate();
@@ -22,11 +22,11 @@ public class BttnStopwatch extends Button{
         });
     }
     //Metods Block
-    public void setTextToButton(String sText){
-    jbStopWatch.setText(sText);
-    }
+//    public void setTextToButton(String sText){
+//    jButton.setText(sText);
+//    }
     //Geters block
-    public JButton getJButton() {
-        return jbStopWatch;
-    }
+//    public JButton getjButton() {
+//        return jButton;
+//    }
 }

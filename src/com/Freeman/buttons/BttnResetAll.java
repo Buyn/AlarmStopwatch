@@ -1,7 +1,6 @@
 package com.Freeman.buttons;
 
 import com.Freeman.Alarm;
-import com.Freeman.Label;
 import com.Freeman.Watch;
 
 import javax.swing.*;
@@ -12,13 +11,13 @@ import java.awt.event.ActionListener;
  * Created by BuYn on 07.12.2014.
  */
 public class BttnResetAll extends Button {
-    private JButton jbResetAll;
+//    private JButton jButton;
     //Metods Block
     public  BttnResetAll(Alarm alNewAlarm, Watch wtNewWatch) {
         alAlarm = alNewAlarm;
         wtWatch = wtNewWatch;
-        this.jbResetAll = new JButton("Reset All");
-        jbResetAll.addActionListener(new ActionListener() {
+        this.jButton = new JButton("Reset All");
+        jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 alAlarm.resetAlarm();
                 alAlarm.runUpdate();
@@ -28,10 +27,8 @@ public class BttnResetAll extends Button {
         });
     }
     //Geters block
-    public JButton getJResetAll() {
-        return jbResetAll;
-    }
-    public void setJResetAll(JButton jbResetAll) {
-        this.jbResetAll = jbResetAll;
-    }
+//    public JButton getjButton() {
+//        return jButton;
+//    }
+
 }

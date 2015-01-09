@@ -1,7 +1,6 @@
 package com.Freeman;
 
 import com.Freeman.buttons.BttnStopwatch;
-import com.Freeman.buttons.Button;
 
 import javax.swing.*;
 
@@ -73,7 +72,7 @@ public class Watch  implements Runnable {
         return lbWatch.getJLabel();
     }
     public JButton getJButton() {
-        return btStopwatch.getJButton();
+        return btStopwatch.getjButton();
     }
     public BttnStopwatch getButton() {
         return btStopwatch;
