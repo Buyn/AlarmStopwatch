@@ -10,46 +10,31 @@ public class Label {
         private String  sTime;
         private String sText = "Sekunds: ";
         //labels block
-        private JLabel jlWatch;
+        private JLabel jLabel;
         //doTime block
-        Timer tTime;
         //Constructor block
         public  Label(){
-            tTime =new Timer();
-            sTime = tTime.getFormatedTime();
-            jlWatch = new JLabel(sText + sTime);
+            jLabel = new JLabel(sText + sTime);
         }
         public  Label(String sNewText){
             sText=sNewText;
-            tTime =new Timer();
-            sTime = tTime.getFormatedTime();
-            jlWatch = new JLabel(sText + sTime);
+            jLabel = new JLabel(sText + sTime);
         }
         //mettods block
-    public void resetAlarm(){
-        tTime.setAlarm();
-        updateLabel();
-    }
-    public void doAlarm(){
-        sTime = tTime.getFormatTimeLeft();
-        updateLabel();
-    }
     public void updateLabel(){
-        jlWatch.setText(sText + sTime);
+        jLabel.setText(sText + sTime);
     }
     //Seters Block
     public void setText(String sNewText){
         sText = sNewText;
         updateLabel();
-    }    public void setTime(String sNewText){
+    }
+    public void setTime(String sNewText){
         sTime = sNewText;
         updateLabel();
     }
     //    geters block
-    public Timer getTimer() {
-        return tTime;
-    }
     public JLabel getJLabel() {
-        return jlWatch;
+        return jLabel;
     }
 }

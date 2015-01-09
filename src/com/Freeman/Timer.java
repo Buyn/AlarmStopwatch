@@ -12,7 +12,7 @@ public class Timer {
     public static int HOURS = MINUTS * 60;
     public static int UA = HOURS * 2;
     public static int DEFAULT_ALARM = 9;
-    //INECEALISATION
+    //INICEALISATION
     private long lStart = 0;
     private long lSet   = 0;
     private long lPause = 0;

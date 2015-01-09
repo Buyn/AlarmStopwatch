@@ -15,7 +15,6 @@ public abstract class Button {
     //Buttons Block
     protected JButton jButton;
     //Labels Block
-    //
     protected Alarm alAlarm;
     protected Watch wtWatch;
     //Metods Block
