@@ -15,7 +15,7 @@ public class BttnResetAll extends Button {
     public  BttnResetAll(Alarm alNewAlarm, Watch wtNewWatch) {
         alAlarm = alNewAlarm;
         wtWatch = wtNewWatch;
-        this.jButton = new JButton("Reset All");
+        this.jButton = new JButton("<html><span style='font-size:20px' >"+"Reset All"+"</span></html>");
         jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 alAlarm.resetAlarm();

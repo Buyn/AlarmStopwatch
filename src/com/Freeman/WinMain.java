@@ -33,9 +33,12 @@ public class WinMain extends JFrame{
     }
     private void setLabels(){
         JPanel jpLabels = new JPanel();
+        jpLabels.setLayout(new BoxLayout(jpLabels , BoxLayout.Y_AXIS));
         jpLabels.add(waWatch.getJLabel());
+        jpLabels.add(alAlarm.getjProgres());
         jpLabels.add(alAlarm.getJLabel());
-        add(jpLabels);
+//        waWatch.getJLabel().setFont(new Font("Serif", Font.PLAIN, 140));
+        add(jpLabels, BorderLayout.CENTER);
     }
     private void setButtons(){
         //set reset buttons
@@ -46,6 +49,9 @@ public class WinMain extends JFrame{
         jpButtons.add(waWatch.getJButton());
         jpButtons.add(alAlarm.getJButton());
         add(jpButtons, BorderLayout.SOUTH);
+    }
+    private void setRadioButton(){
+        JTextField jText = new JTextField("15");
     }
     private void setTable (){
         Object rowData[][] = {

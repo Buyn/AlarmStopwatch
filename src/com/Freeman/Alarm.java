@@ -12,6 +12,7 @@ public class Alarm implements Runnable {
     private BttnAlarm btAlarm;
     private Timer tTime;
     private AlarmSound asSound ;
+    private JProgressBar jProgres;
     private boolean bStop = false;
 
     @Override
@@ -38,8 +39,12 @@ public class Alarm implements Runnable {
         lbAlarm = new Label("Alarm: ");
         tTime = new Timer();
         lbAlarm.setTime(tTime.getFormatedTime());
+        jProgres = new JProgressBar( -(int)tTime.getSekundsLeft() , 0);
+        jProgres.setStringPainted(true);
+        jProgres.setString("");
         runUpdate();
         btAlarm = new BttnAlarm(this);
+
     }
     /**
      * Metods block
@@ -62,6 +67,9 @@ public class Alarm implements Runnable {
     }
     public void runUpdate() {
         lbAlarm.setTime(tTime.getFormatTimeLeft());
+        jProgres.setValue(-(int)tTime.getSekundsLeft());
+        jProgres.setString(String.valueOf(tTime.getSekundsLeft()));
+//        jProgres.setStringPainted(true);
         lbAlarm.updateLabel();
     }
     public boolean isAlarmSetoff (){
@@ -98,5 +106,8 @@ public class Alarm implements Runnable {
     }
     public Timer getTimer() {
         return tTime;
+    }
+    public JProgressBar getjProgres() {
+        return jProgres;
     }
 }

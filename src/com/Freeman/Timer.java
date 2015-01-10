@@ -7,11 +7,11 @@ import java.text.SimpleDateFormat;
  */
 public class Timer {
     //Constants
-    public static int SEKUNDS = 1000;
-    public static int MINUTS = SEKUNDS * 60;
-    public static int HOURS = MINUTS * 60;
-    public static int UA = HOURS * 2;
-    public static int DEFAULT_ALARM = 9;
+    public static final int SEKUNDS = 1000;
+    public static final int MINUTS = SEKUNDS * 60;
+    public static final int HOURS = MINUTS * 60;
+    public static final int UA = HOURS * 2;
+    public static final int DEFAULT_ALARM = 9;
     //INICEALISATION
     private long lStart = 0;
     private long lSet   = 0;
@@ -45,6 +45,9 @@ public class Timer {
     }
     public long getTimeLeft(){
         return lSet - getNow();
+    }
+    public long getSekundsLeft(){
+        return (lSet - getNow())/SEKUNDS;
     }
     public String getFormatDeltaTime(){
         return formatLong(getDeltaTime());}

@@ -1,6 +1,7 @@
 package com.Freeman;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by BuYn on 09.12.2014.
@@ -8,17 +9,19 @@ import javax.swing.*;
 public class Label {
     //Integer block
         private String  sTime;
-        private String sText = "Sekunds: ";
+        private String sText = "Time: ";
         //labels block
         private JLabel jLabel;
         //doTime block
         //Constructor block
         public  Label(){
             jLabel = new JLabel(sText + sTime);
+            jLabel.setFont(new Font("Serif", Font.PLAIN, 40));
         }
         public  Label(String sNewText){
             sText=sNewText;
             jLabel = new JLabel(sText + sTime);
+            jLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         }
         //mettods block
     public void updateLabel(){
