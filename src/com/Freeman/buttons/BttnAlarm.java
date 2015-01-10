@@ -15,11 +15,12 @@ public class BttnAlarm extends Button {
     //Metods Block
     public  BttnAlarm(Alarm alNewAlarm){
         alAlarm = alNewAlarm;
-        jButton = new JButton("Set Alarm");
+        jButton = new JButton("Stop Alarm");
         jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                alAlarm.resetAlarm();
+                alAlarm.trigerStop();
                 alAlarm.runUpdate();
+
             }
         });
     }

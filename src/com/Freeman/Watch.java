@@ -8,10 +8,10 @@ import javax.swing.*;
  * Created by BuYn on 09.12.2014.
  */
 public class Watch  implements Runnable {
-    Label   lbWatch;
-    Timer   tTime;
-    BttnStopwatch btStopwatch;
-    boolean bPause = false;
+    private Label   lbWatch;
+    private Timer   tTime;
+    private BttnStopwatch btStopwatch;
+    private boolean bPause = false;
 
     @Override
     public void run() {

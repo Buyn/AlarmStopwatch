@@ -8,23 +8,25 @@ import javax.swing.*;
  * Created by BuYn on 09.12.2014.
  */
 public class Alarm implements Runnable {
-    Label lbAlarm;
-    BttnAlarm btAlarm;
-    Timer tTime;
-    AlarmSound asSound ;
+    private Label lbAlarm;
+    private BttnAlarm btAlarm;
+    private Timer tTime;
+    private AlarmSound asSound ;
+    private boolean bStop = false;
 
     @Override
     public void run() {
         while (true) {
-            runUpdate();
-            if (isAlarmSetoff()){
-                playSound();
-                resetAlarm(1);
-            }
             try {
                 Thread.sleep(Timer.SEKUNDS);
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
+            }
+            if(bStop) continue;
+            runUpdate();
+            if (isAlarmSetoff()){
+                playSound();
+                resetAlarm(1);
             }
         }
     }
@@ -42,6 +44,22 @@ public class Alarm implements Runnable {
     /**
      * Metods block
      */
+    public void trigerStop(){
+        if (bStop) {
+            setReset();
+            return;
+        }
+        setStop();
+    }
+    public void setStop(){
+        bStop = true;
+        btAlarm.setTextToButton("Reset Alarm");
+    }
+    public void setReset(){
+        bStop = false;
+        btAlarm.setTextToButton("Stop Alarm");
+        resetAlarm();
+    }
     public void runUpdate() {
         lbAlarm.setTime(tTime.getFormatTimeLeft());
         lbAlarm.updateLabel();
