@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class BttnStopwatch extends Button{
     public BttnStopwatch(Watch wtNewWatch){
         super.wtWatch = wtNewWatch;
-        jButton = new JButton("Pause");
+        jButton = new JButton("Pause Stopwatch");
         jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 wtWatch.trigerPause();

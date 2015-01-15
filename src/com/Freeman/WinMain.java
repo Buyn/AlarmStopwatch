@@ -13,6 +13,7 @@ public class WinMain extends JFrame{
     private BttnResetAll bResetAll;
     private Alarm alAlarm;
     private Watch waWatch;
+    private RadioSwitch rsRadioPanel;
 
     public WinMain() {
     super("Alarm Stopwatch");
@@ -26,8 +27,11 @@ public class WinMain extends JFrame{
     private void setComponennts(){
         alAlarm = new Alarm();
         waWatch = new Watch();
+        rsRadioPanel = new RadioSwitch();
         setLabels();
         setButtons();
+        add(rsRadioPanel.getjPanel(), BorderLayout.EAST);
+
 //        delate coments for adding table
 //        setTable();
     }
