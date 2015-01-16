@@ -1,7 +1,6 @@
 package com.Freeman;
 
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
@@ -21,10 +20,13 @@ public class RadioSwitch {
     private JSpinner jSpinner1;
     private JSpinner jSpinner2;
     private JSpinner jSpinner3;
+    //mechanic
+    private Alarm aAlarm;
     /*
     * Construktor
     * */
-    public RadioSwitch(){
+    public RadioSwitch(Alarm aAlarm){
+        this.aAlarm = aAlarm;
         jPanel = new JPanel();
         setButtons();
         setTextFelds();
@@ -42,22 +44,27 @@ public class RadioSwitch {
         jRButton2.setMnemonic(KeyEvent.VK_2);
         jRButton3.setMnemonic(KeyEvent.VK_3);
         jRButton1.addItemListener(new ItemListener() {
-            @Override
             public void itemStateChanged(ItemEvent e) {
                 if (jRButton1.isSelected()) {
                     System.out.println("RadioSwitch.itemStateChanged" + jSpinner1.getValue());
-
+                    aAlarm.setTimerAlarm((Integer)(jSpinner1.getValue()));
                 }
             }
         });
         jRButton2.addItemListener(new ItemListener() {
-            @Override
             public void itemStateChanged(ItemEvent e) {
+                if (jRButton2.isSelected()) {
+                    System.out.println("RadioSwitch.itemStateChanged" + jSpinner2.getValue());
+                    aAlarm.setTimerAlarm((Integer)(jSpinner2.getValue()));
+                }
             }
         });
         jRButton3.addItemListener(new ItemListener() {
-            @Override
             public void itemStateChanged(ItemEvent e) {
+                if (jRButton3.isSelected()) {
+                    System.out.println("RadioSwitch.itemStateChanged" + jSpinner3.getValue());
+                    aAlarm.setTimerAlarm((Integer)(jSpinner3.getValue()));
+                }
             }
         });
         //add to grup

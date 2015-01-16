@@ -27,9 +27,9 @@ public class WinMain extends JFrame{
     private void setComponennts(){
         alAlarm = new Alarm();
         waWatch = new Watch();
-        rsRadioPanel = new RadioSwitch();
         setLabels();
         setButtons();
+        rsRadioPanel = new RadioSwitch(alAlarm);
         add(rsRadioPanel.getjPanel(), BorderLayout.EAST);
 
 //        delate coments for adding table

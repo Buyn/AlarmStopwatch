@@ -69,7 +69,6 @@ public class Alarm implements Runnable {
         lbAlarm.setTime(tTime.getFormatTimeLeft());
         jProgres.setValue(-(int)tTime.getSekundsLeft());
         jProgres.setString(String.valueOf(tTime.getSekundsLeft()));
-//        jProgres.setStringPainted(true);
         lbAlarm.updateLabel();
     }
     public boolean isAlarmSetoff (){
@@ -88,6 +87,9 @@ public class Alarm implements Runnable {
     public void playSound(){
         Thread thSound = new Thread(asSound);
         thSound.start();
+    }
+    public void setTimerAlarm(int iMinuts){
+        tTime.setAlarmSet(iMinuts);
     }
     /**
      * Geters and Seters block

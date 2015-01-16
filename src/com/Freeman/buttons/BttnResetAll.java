@@ -19,6 +19,8 @@ public class BttnResetAll extends Button {
         jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 alAlarm.setReset();
+                // uncoment if rest all will non corectli rest alarm
+//                alAlarm.resetAlarm();
                 alAlarm.runUpdate();
                 wtWatch.resetTime();
                 wtWatch.runUpdate();
