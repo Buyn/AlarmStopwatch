@@ -13,19 +13,22 @@ public class Timer {
     public static final int UA = HOURS * 2;
     public static final int DEFAULT_ALARM = 9;
     //INICEALISATION
-    private long lStart = 0;
-    private long lSet   = 0;
-    private long lPause = 0;
+    private long    lStart = 0;
+    private long    lSet   = 0;
+    private long    lPause = 0;
+    private int     iAlarmSet = 0;
     private SimpleDateFormat sdf;
 //    End of Intedger Block
 // Bagen of Constructors block
     public Timer(){
+        iAlarmSet = DEFAULT_ALARM;
         sdf = new SimpleDateFormat("HH:mm:ss");
         lStart = System.currentTimeMillis();
         long lMinuts =   MINUTS *9;
         lSet = lStart + (DEFAULT_ALARM * MINUTS);
     }
     public Timer(int iMinuts) {
+        iAlarmSet = iMinuts;
         lStart = System.currentTimeMillis();
         lSet = lStart + (iMinuts * MINUTS);
         sdf = new SimpleDateFormat("HH:mm:ss");
@@ -71,9 +74,10 @@ public class Timer {
         lPause = 0;
     }
     public void setAlarm() {
-        lSet = getNow() + (DEFAULT_ALARM * MINUTS);
+        lSet = getNow() + (iAlarmSet * MINUTS);
     }
     public void setAlarm(int iMinuts) {
+        iAlarmSet = iMinuts;
         lSet = getNow() + (iMinuts * MINUTS);
     }
     public void setStart(long dStart) {
@@ -81,6 +85,12 @@ public class Timer {
     }
     public void setPause(long lPause) {
         this.lPause = lPause;
+    }
+    public void setAlarmSet(int iAlarmSet) {
+        this.iAlarmSet = iAlarmSet;
+    }
+    public int getAlarmSet() {
+        return iAlarmSet;
     }
     public long getPause() {
         return lPause;
