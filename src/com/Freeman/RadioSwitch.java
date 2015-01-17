@@ -45,16 +45,13 @@ public class RadioSwitch {
         jRButton3.setMnemonic(KeyEvent.VK_3);
         jRButton1.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (jRButton1.isSelected()) {
-                    System.out.println("RadioSwitch.itemStateChanged" + jSpinner1.getValue());
+                if (jRButton1.isSelected())
                     aAlarm.setTimerAlarm((Integer)(jSpinner1.getValue()));
-                }
             }
         });
         jRButton2.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (jRButton2.isSelected()) {
-                    System.out.println("RadioSwitch.itemStateChanged" + jSpinner2.getValue());
                     aAlarm.setTimerAlarm((Integer)(jSpinner2.getValue()));
                 }
             }
@@ -62,7 +59,6 @@ public class RadioSwitch {
         jRButton3.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (jRButton3.isSelected()) {
-                    System.out.println("RadioSwitch.itemStateChanged" + jSpinner3.getValue());
                     aAlarm.setTimerAlarm((Integer)(jSpinner3.getValue()));
                 }
             }
@@ -99,7 +95,6 @@ public class RadioSwitch {
                 1,  //from
                 999,//to
                 1);//step
-
     }
 
     public JPanel getjPanel() {

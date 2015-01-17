@@ -50,13 +50,13 @@ public class Watch  implements Runnable {
     }
     public void setPause(){
         bPause = true;
-        btStopwatch.setTextToButton("Start");
+        btStopwatch.setTextToButton("Start Stopwatch");
         tTime.setPause();
     }
     public void unPause(){
         bPause = false;
         tTime.unPause();
-        btStopwatch.setTextToButton("Pause");
+        btStopwatch.setTextToButton("Pause Stopwatch");
     }
     public void resetTime(){
         tTime.setToZeroStart();

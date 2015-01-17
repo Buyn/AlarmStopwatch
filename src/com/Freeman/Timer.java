@@ -77,7 +77,7 @@ public class Timer {
         lSet = getNow() + (iAlarmSet * MINUTS);
     }
     public void setAlarm(int iMinuts) {
-        iAlarmSet = iMinuts;
+//        iAlarmSet = iMinuts;
         lSet = getNow() + (iMinuts * MINUTS);
     }
     public void setStart(long dStart) {
