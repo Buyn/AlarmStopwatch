@@ -1,19 +1,23 @@
 package com.Freeman;
 
 import com.Freeman.buttons.*;
-
+import com.Freeman.buttons.Button;
+import com.Freeman.switches.SwitchPanel;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 /**
  * Created by BuYn on 03.12.2014.
  */
 public class WinMain extends JFrame{
-    private BttnResetAll bResetAll;
-    private Alarm alAlarm;
-    private Watch waWatch;
-    private RadioSwitch rsRadioPanel;
+    private BttnResetAll    bResetAll;
+    private ButtonExtender  bExtender;
+    private Alarm           alAlarm;
+    private Watch           waWatch;
+    private SwitchPanel     panelSwitchs;
 
     public WinMain() {
     super("Alarm Stopwatch");
@@ -25,15 +29,11 @@ public class WinMain extends JFrame{
         setComponennts();
     }
     private void setComponennts(){
-        alAlarm = new Alarm();
-        waWatch = new Watch();
+        alAlarm         = new Alarm();
+        waWatch         = new Watch();
         setLabels();
         setButtons();
-        rsRadioPanel = new RadioSwitch(alAlarm);
-        add(rsRadioPanel.getjPanel(), BorderLayout.EAST);
-
-//        delate coments for adding table
-//        setTable();
+        setRadioButtons();
     }
     private void setLabels(){
         JPanel jpLabels = new JPanel();
@@ -41,33 +41,29 @@ public class WinMain extends JFrame{
         jpLabels.add(waWatch.getJLabel());
         jpLabels.add(alAlarm.getjProgres());
         jpLabels.add(alAlarm.getJLabel());
-//        waWatch.getJLabel().setFont(new Font("Serif", Font.PLAIN, 140));
         add(jpLabels, BorderLayout.CENTER);
     }
     private void setButtons(){
         //set reset buttons
-        bResetAll = new BttnResetAll(alAlarm , waWatch);
+        bResetAll           = new BttnResetAll(alAlarm , waWatch);
         add(bResetAll.getjButton(), BorderLayout.NORTH);
         //add to panel
-        JPanel jpButtons = new JPanel();
+        JPanel jpButtons    = new JPanel();
         jpButtons.add(waWatch.getJButton());
         jpButtons.add(alAlarm.getJButton());
+        bExtender = new ButtonExtender();
+        jpButtons.add(bExtender.getjButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
-    private void setRadioButton(){
-        JTextField jText = new JTextField("15");
-    }
-    private void setTable (){
-        Object rowData[][] = {
-                { "1 1", "1 2", "1 3" },
-                { "2 1", "2 2", "2 3" }
-        };
-        Object columnNames[] = { "Колонка 1", "Колонка 2", "Колонка 3" };
-        JTable table = new JTable(rowData, columnNames);
-        add(table);
+    private void setRadioButtons(){
+        panelSwitchs        = new SwitchPanel(alAlarm);
+        panelSwitchs.addSwitch(3);
+        panelSwitchs.addSwitch(9,true);
+        panelSwitchs.addSwitch(15);
+        add(panelSwitchs.getjPanel(), BorderLayout.EAST);
     }
 
-    public com.Freeman.buttons.Button getbAlarm() {
+    public Button getbAlarm() {
         return alAlarm.getButton();
     }
     public Alarm getAlarm() {
@@ -76,7 +72,7 @@ public class WinMain extends JFrame{
     public Watch getWatch() {
         return waWatch;
     }
-    public com.Freeman.buttons.Button getbResetAll() {
+    public Button getbResetAll() {
         return bResetAll;
     }
 }

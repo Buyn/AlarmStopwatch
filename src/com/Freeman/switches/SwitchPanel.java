@@ -24,12 +24,16 @@ public class SwitchPanel {
 
     public void addSwitch(int iInitalSet){
         alSwitchers.add(new Switch(aAlarm, iInitalSet));
-        jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()).getjPanel());
-        groupSwitches.add(alSwitchers.get(alSwitchers.size()).getjRadioButton());
+        jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
+        groupSwitches.add(alSwitchers.get(alSwitchers.size()-1).getjRadioButton());
     }
     public void addSwitch(int iInitalSet, boolean bState){
         alSwitchers.add(new Switch(aAlarm, iInitalSet, bState));
-        jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()).getjPanel());
-        groupSwitches.add(alSwitchers.get(alSwitchers.size()).getjRadioButton());
+        jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
+        groupSwitches.add(alSwitchers.get(alSwitchers.size()-1).getjRadioButton());
+    }
+
+    public JPanel getjPanel() {
+        return jPanelSwitchers;
     }
 }
