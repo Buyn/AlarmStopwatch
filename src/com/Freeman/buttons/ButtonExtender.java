@@ -1,5 +1,7 @@
 package com.Freeman.buttons;
 
+import com.Freeman.switches.SwitchPanel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,14 +10,26 @@ import java.awt.event.ActionListener;
  * Created by BuYn on 18.01.2015.
  */
 public class ButtonExtender {
-    JButton jButton;
-    boolean bOpen = false;
+    public JButton jButton;
+    public boolean bOpen = true;
+    public SwitchPanel panelSwitchers;
+    public JFrame jFrame;
 
-    public ButtonExtender(){
+    public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame){
+        jFrame = newjFrame;
+        panelSwitchers = swPanel;
+        jButton =  new JButton(">>");
+        jButton.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 trigerButton();
+             }
+        });
+    }
+    public ButtonExtender(SwitchPanel swPanel){
+        panelSwitchers = swPanel;
          jButton =  new JButton(">>");
          jButton.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent e) {
-                 System.out.println("WinMain.actionPerformed");
                  trigerButton();
              }
          });
@@ -30,12 +44,14 @@ public class ButtonExtender {
     }
     private void closePanel(){
         bOpen = false;
-        System.out.println("ButtonExtender.closePanel");
+        panelSwitchers.getjPanel().setVisible(false);
+        jFrame.pack();
         jButton.setText(">>");
     }
     private void openPanel(){
         bOpen = true;
-        System.out.println("ButtonExtender.openPanel");
+        panelSwitchers.getjPanel().setVisible(true);
+        jFrame.pack();
         jButton.setText("<<");
     }
 

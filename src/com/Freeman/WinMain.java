@@ -5,9 +5,6 @@ import com.Freeman.buttons.Button;
 import com.Freeman.switches.SwitchPanel;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 
 /**
  * Created by BuYn on 03.12.2014.
@@ -32,8 +29,8 @@ public class WinMain extends JFrame{
         alAlarm         = new Alarm();
         waWatch         = new Watch();
         setLabels();
-        setButtons();
         setRadioButtons();
+        setButtons();
     }
     private void setLabels(){
         JPanel jpLabels = new JPanel();
@@ -51,7 +48,7 @@ public class WinMain extends JFrame{
         JPanel jpButtons    = new JPanel();
         jpButtons.add(waWatch.getJButton());
         jpButtons.add(alAlarm.getJButton());
-        bExtender = new ButtonExtender();
+        bExtender = new ButtonExtender(panelSwitchs , this);
         jpButtons.add(bExtender.getjButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
