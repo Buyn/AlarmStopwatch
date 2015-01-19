@@ -18,23 +18,13 @@ public class ButtonExtender {
     public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame){
         jFrame = newjFrame;
         panelSwitchers = swPanel;
-        jButton =  new JButton(">>");
+        jButton =  new JButton("<<");
         jButton.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent e) {
                  trigerButton();
              }
         });
     }
-    public ButtonExtender(SwitchPanel swPanel){
-        panelSwitchers = swPanel;
-         jButton =  new JButton(">>");
-         jButton.addActionListener(new ActionListener() {
-             public void actionPerformed(ActionEvent e) {
-                 trigerButton();
-             }
-         });
-     }
-
     private void trigerButton(){
         if (bOpen){
             closePanel();

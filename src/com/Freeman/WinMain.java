@@ -46,6 +46,8 @@ public class WinMain extends JFrame{
         add(bResetAll.getjButton(), BorderLayout.NORTH);
         //add to panel
         JPanel jpButtons    = new JPanel();
+        jpButtons.setLayout(new BoxLayout(jpButtons , BoxLayout.X_AXIS));
+
         jpButtons.add(waWatch.getJButton());
         jpButtons.add(alAlarm.getJButton());
         bExtender = new ButtonExtender(panelSwitchs , this);
