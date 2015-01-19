@@ -11,14 +11,15 @@ import java.awt.event.ActionListener;
  */
 public class ButtonExtender {
     public JButton jButton;
-    public boolean bOpen = true;
+    public boolean bOpen = false;
     public SwitchPanel panelSwitchers;
     public JFrame jFrame;
 
     public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame){
         jFrame = newjFrame;
         panelSwitchers = swPanel;
-        jButton =  new JButton("<<");
+        panelSwitchers.getjPanel().setVisible(false);
+        jButton =  new JButton(">>");
         jButton.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent e) {
                  trigerButton();

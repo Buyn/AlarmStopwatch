@@ -4,6 +4,7 @@ import com.Freeman.buttons.*;
 import com.Freeman.buttons.Button;
 import com.Freeman.switches.SwitchPanel;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 /**
@@ -46,11 +47,16 @@ public class WinMain extends JFrame{
         add(bResetAll.getjButton(), BorderLayout.NORTH);
         //add to panel
         JPanel jpButtons    = new JPanel();
-        jpButtons.setLayout(new BoxLayout(jpButtons , BoxLayout.X_AXIS));
-
+        jpButtons.setLayout(new BoxLayout(jpButtons, BoxLayout.X_AXIS));
+        jpButtons.add(Box.createRigidArea(new Dimension(15, 5)));
         jpButtons.add(waWatch.getJButton());
+        waWatch.getJButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
+        alAlarm.getJButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
+        jpButtons.add(Box.createRigidArea(new Dimension(5,5)));
         jpButtons.add(alAlarm.getJButton());
+        jpButtons.add(Box.createRigidArea(new Dimension(5,5)));
         bExtender = new ButtonExtender(panelSwitchs , this);
+        bExtender.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
         jpButtons.add(bExtender.getjButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
