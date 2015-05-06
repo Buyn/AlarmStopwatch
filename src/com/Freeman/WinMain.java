@@ -4,7 +4,6 @@ import com.Freeman.buttons.*;
 import com.Freeman.buttons.Button;
 import com.Freeman.switches.SwitchPanel;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 /**

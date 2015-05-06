@@ -10,7 +10,7 @@ public class Alarm implements Runnable {
     private Label lbAlarm;
     private BttnAlarm btAlarm;
     private Timer tTime;
-    private AlarmSound asSound ;
+    private AlarmSound asSound;
     private JProgressBar jProgres;
     private boolean bStop = false;
 
@@ -49,6 +49,8 @@ public class Alarm implements Runnable {
      * Metods block
      */
     public void trigerStop(){
+        //uncoment for testing sound on button press
+        //playSound();
         if (bStop) {
             setReset();
             return;

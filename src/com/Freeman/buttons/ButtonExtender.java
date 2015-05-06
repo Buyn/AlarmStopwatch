@@ -15,6 +15,11 @@ public class ButtonExtender {
     public SwitchPanel panelSwitchers;
     public JFrame jFrame;
 
+    /**
+     * Constructors Block
+     * acktio listener using funcktion trigerButton
+     * to main logik
+     */
     public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame){
         jFrame = newjFrame;
         panelSwitchers = swPanel;
@@ -26,6 +31,12 @@ public class ButtonExtender {
              }
         });
     }
+
+    /**
+    * main logic
+    * on state variable bOpen decide what to execute
+    * closePanel or openPanel
+     * */
     private void trigerButton(){
         if (bOpen){
             closePanel();
