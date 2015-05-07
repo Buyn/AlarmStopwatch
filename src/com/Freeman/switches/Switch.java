@@ -31,22 +31,11 @@ public class Switch {
     //private metods
     private void setButton(){
         jRadioButton = new JRadioButton("Alarm set:");
-        //addChangeListener
-        jRadioButton.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-                if (jRadioButton.isSelected())
-                    aAlarm.setTimerAlarm((Integer)(jSpinner.getValue()));
-            }
-        });
+        setListeners();
     }
     private void setButton(boolean bState){
         jRadioButton = new JRadioButton("Alarm set:" , bState);
-        jRadioButton.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-                if (jRadioButton.isSelected())
-                    aAlarm.setTimerAlarm((Integer)(jSpinner.getValue()));
-            }
-        });
+        setListeners();
     }
     private void setListeners(){
         //addChangeListener
