@@ -2,6 +2,8 @@ package com.Freeman.switches;
 
 import com.Freeman.Alarm;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -29,6 +31,7 @@ public class Switch {
     //private metods
     private void setButton(){
         jRadioButton = new JRadioButton("Alarm set:");
+        //addChangeListener
         jRadioButton.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (jRadioButton.isSelected())
@@ -37,7 +40,7 @@ public class Switch {
         });
     }
     private void setButton(boolean bState){
-        jRadioButton = new JRadioButton("Alarm set:",bState);
+        jRadioButton = new JRadioButton("Alarm set:" , bState);
         jRadioButton.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (jRadioButton.isSelected())
@@ -45,6 +48,22 @@ public class Switch {
             }
         });
     }
+    private void setListeners(){
+        //addChangeListener
+        jRadioButton.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent event) {
+                if (jRadioButton.isSelected())
+                    aAlarm.setTimerAlarm((Integer)(jSpinner.getValue()));
+            }
+        });
+        jRadioButton.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent event) {
+                if (jRadioButton.isSelected())
+                    aAlarm.setTimerAlarm((Integer) (jSpinner.getValue()));
+            }
+        });
+    }
+
     private void setSpinner(int iInitialSet){
         jSpinner = new JSpinner(new SpinnerNumberModel(
                 iInitialSet , //inital value
