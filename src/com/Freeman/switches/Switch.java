@@ -15,6 +15,7 @@ public class Switch {
     private JRadioButton    jRadioButton;
     private JSpinner        jSpinner;
     private Alarm           aAlarm;
+    private ButtonGroup groupSwitches;
 
     public Switch (Alarm newAlarm ,int iInitialSet, boolean bState){
         aAlarm =newAlarm;
@@ -60,6 +61,11 @@ public class Switch {
                 999,//to
                 1)//step
         );
+        jSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent event) {
+                aAlarm.setTimerAlarm((Integer) (jSpinner.getValue()));
+            }
+        });
     }
     private void setPanel(){
         jPanel = new JPanel();
@@ -72,5 +78,17 @@ public class Switch {
     }
     public JPanel getjPanel() {
         return jPanel;
+    }
+    //seter
+
+    public void setButtonGroupListener(ButtonGroup newGroupSwitches){
+        this.groupSwitches = newGroupSwitches;
+        groupSwitches.add(jRadioButton);
+        jSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent event) {
+                aAlarm.setTimerAlarm((Integer) (jSpinner.getValue()));
+                groupSwitches.setSelected(jRadioButton.getModel() , true);
+            }
+        });
     }
 }

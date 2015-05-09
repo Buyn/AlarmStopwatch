@@ -25,12 +25,13 @@ public class SwitchPanel {
     public void addSwitch(int iInitalSet){
         alSwitchers.add(new Switch(aAlarm, iInitalSet));
         jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
-        groupSwitches.add(alSwitchers.get(alSwitchers.size()-1).getjRadioButton());
+        alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
     }
     public void addSwitch(int iInitalSet, boolean bState){
         alSwitchers.add(new Switch(aAlarm, iInitalSet, bState));
+        //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
         jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
-        groupSwitches.add(alSwitchers.get(alSwitchers.size()-1).getjRadioButton());
+        alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
     }
 
     public JPanel getjPanel() {
