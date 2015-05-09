@@ -22,13 +22,14 @@ public class SwitchPanel {
         alSwitchers         = new ArrayList<Switch>(3);
     }
 
-    public void addSwitch(int iInitalSet){
-        alSwitchers.add(new Switch(aAlarm, iInitalSet));
+    public void addSwitch(int iInitalSet, boolean bState){
+        alSwitchers.add(new Switch(aAlarm, iInitalSet, bState));
+        //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
         jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
         alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
     }
-    public void addSwitch(int iInitalSet, boolean bState){
-        alSwitchers.add(new Switch(aAlarm, iInitalSet, bState));
+    public void addSwitch(int iInitalSet){
+        alSwitchers.add(new Switch(aAlarm, iInitalSet));
         //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
         jPanelSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
         alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
