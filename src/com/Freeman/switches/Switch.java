@@ -53,7 +53,6 @@ public class Switch {
             }
         });
     }
-
     private void setSpinner(int iInitialSet){
         jSpinner = new JSpinner(new SpinnerNumberModel(
                 iInitialSet , //inital value
@@ -73,14 +72,10 @@ public class Switch {
         jPanel.add(jSpinner);
     }
     //geters
-    public JRadioButton getjRadioButton() {
-        return jRadioButton;
-    }
     public JPanel getjPanel() {
         return jPanel;
     }
     //seter
-
     public void setButtonGroupListener(ButtonGroup newGroupSwitches){
         this.groupSwitches = newGroupSwitches;
         groupSwitches.add(jRadioButton);

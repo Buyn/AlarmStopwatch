@@ -15,6 +15,7 @@ public class WinMain extends JFrame{
     private Alarm           alAlarm;
     private Watch           waWatch;
     private SwitchPanel     panelSwitchs;
+    private SwitchPanel     panelHidenSwitchs;
 
     public WinMain() {
     super("Alarm Stopwatch");
@@ -61,9 +62,13 @@ public class WinMain extends JFrame{
     }
     private void setRadioButtons(){
         panelSwitchs        = new SwitchPanel(alAlarm);
+        //panelHidenSwitchs   = new SwitchPanel(alAlarm);
         panelSwitchs.addSwitch(3);
         panelSwitchs.addSwitch(9,true);
         panelSwitchs.addSwitch(15);
+        panelSwitchs.addHidenSwitch(60);
+        panelSwitchs.addHidenSwitch(90);
+        panelSwitchs.addHidenSwitch(120);
         add(panelSwitchs.getjPanel(), BorderLayout.EAST);
     }
 
