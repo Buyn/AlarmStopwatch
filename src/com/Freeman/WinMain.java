@@ -61,7 +61,6 @@ public class WinMain extends JFrame{
     }
     private void setRadioButtons(){
         panelSwitchs        = new SwitchPanel(alAlarm);
-        panelSwitchs        = new SwitchPanel(alAlarm);
         panelSwitchs.addSwitch(3);
         panelSwitchs.addSwitch(9,true);
         panelSwitchs.addSwitch(15);
