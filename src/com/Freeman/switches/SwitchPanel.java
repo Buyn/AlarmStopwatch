@@ -53,4 +53,10 @@ public class SwitchPanel {
     public JPanel getjPanel() {
         return jPanelSuming;
     }
+    public JPanel getSwith() {
+        return jPanelSwitchers;
+    }
+    public JPanel getPanelHidenSwitchers() {
+        return jPanelHidenSwitchers;
+    }
 }

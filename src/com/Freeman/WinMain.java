@@ -12,6 +12,7 @@ import java.awt.*;
 public class WinMain extends JFrame{
     private BttnResetAll    bResetAll;
     private ButtonExtender  bExtender;
+    private ButtonExtender  bExtender10;
     private Alarm           alAlarm;
     private Watch           waWatch;
     private SwitchPanel     panelSwitchs;
@@ -56,8 +57,11 @@ public class WinMain extends JFrame{
         jpButtons.add(alAlarm.getJButton());
         jpButtons.add(Box.createRigidArea(new Dimension(5,5)));
         bExtender = new ButtonExtender(panelSwitchs , this);
+        bExtender10 = new ButtonExtender(panelSwitchs , this, "<<10", "10>>");
         bExtender.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
+        bExtender10.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
         jpButtons.add(bExtender.getjButton());
+        jpButtons.add(bExtender10.getjButton());
         add(jpButtons, BorderLayout.SOUTH);
     }
     private void setRadioButtons(){
