@@ -29,6 +29,12 @@ public class Switch {
         setSpinner(iInitialSet);
         setPanel();
     }
+    public Switch (Alarm newAlarm ,int iInitialSet, int iStep){
+        aAlarm =newAlarm;
+        setButton();
+        setSpinner(iInitialSet , iStep);
+        setPanel();
+    }
     //private metods
     private void setButton(){
         jRadioButton = new JRadioButton("Alarm set:");
@@ -53,12 +59,25 @@ public class Switch {
             }
         });
     }
+    private void setSpinner(int iInitialSet, int iStep){
+        jSpinner = new JSpinner(new SpinnerNumberModel(
+                iInitialSet ,   //inital value
+                1,              //from
+                999,            //to
+                iStep)              //step
+        );
+        jSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent event) {
+                aAlarm.setTimerAlarm((Integer) (jSpinner.getValue()));
+            }
+        });
+    }
     private void setSpinner(int iInitialSet){
         jSpinner = new JSpinner(new SpinnerNumberModel(
-                iInitialSet , //inital value
-                1,  //from
-                999,//to
-                1)//step
+                iInitialSet ,   //inital value
+                1,              //from
+                999,            //to
+                1)              //step
         );
         jSpinner.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent event) {

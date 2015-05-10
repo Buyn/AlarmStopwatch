@@ -46,7 +46,13 @@ public class SwitchPanel {
         alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
     }
     public void addHidenSwitch(int iInitalSet){
-        alSwitchers.add(new Switch(aAlarm, iInitalSet));
+        alSwitchers.add(new Switch(aAlarm, iInitalSet, 10));
+        //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
+        jPanelHidenSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
+        alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
+    }
+    public void addHidenSwitch(int iInitalSet, int iStep){
+        alSwitchers.add(new Switch(aAlarm, iInitalSet, iStep));
         //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
         jPanelHidenSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
         alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
