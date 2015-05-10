@@ -1,5 +1,6 @@
 package com.Freeman.buttons;
 
+import com.Freeman.WinMain;
 import com.Freeman.switches.SwitchPanel;
 
 import javax.swing.*;
@@ -13,16 +14,16 @@ public class ButtonExtender {
     private JButton jButton;
     private boolean bOpen = false;
     private SwitchPanel panelSwitchers;
-    private JFrame jFrame;
+    private WinMain jFrame;
     private String sButton[];
 
 
     /**
      * Constructors Block
-     * acktio listener using funcktion trigerButton
-     * to main logik
+     * action listener using funcktion -
+     * trigerButton as main logic
      */
-    public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame){
+    public ButtonExtender(SwitchPanel swPanel, WinMain newjFrame){
         jFrame = newjFrame;
         sButton = new String[2];
         sButton[0] = ">>";
@@ -36,8 +37,8 @@ public class ButtonExtender {
              }
         });
     }
-    public ButtonExtender(SwitchPanel swPanel, JFrame newjFrame, String sButtonTextON, String sButtonTextOFF){
-        jFrame = newjFrame;
+    public ButtonExtender(SwitchPanel swPanel, WinMain newjFrame, String sButtonTextON, String sButtonTextOFF){
+        jFrame =  newjFrame;
         sButton = new String[2];
         sButton[0] = sButtonTextOFF;
         sButton[1] = sButtonTextON;
@@ -50,7 +51,6 @@ public class ButtonExtender {
              }
         });
     }
-
     /**
     * main logic
     * on state variable bOpen decide what to execute
@@ -70,6 +70,7 @@ public class ButtonExtender {
         }
         openPanel();
     }
+    //Metods
     private void closePanel(JPanel jPanel){
         bOpen = false;
         jPanel.setVisible(false);
@@ -94,7 +95,7 @@ public class ButtonExtender {
         jFrame.pack();
         jButton.setText(sButton[1]);
     }
-
+    //GETER
     public JButton getjButton() {
         return jButton;
     }

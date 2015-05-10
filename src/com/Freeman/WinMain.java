@@ -16,7 +16,7 @@ public class WinMain extends JFrame{
     private Alarm           alAlarm;
     private Watch           waWatch;
     private SwitchPanel     panelSwitchs;
-    private SwitchPanel     panelHidenSwitchs;
+    private JPanel          jpanelHidenExtender;
 
     public WinMain() {
     super("Alarm Stopwatch");
@@ -48,25 +48,26 @@ public class WinMain extends JFrame{
         add(bResetAll.getjButton(), BorderLayout.NORTH);
         //add to panel
         JPanel jpButtons    = new JPanel();
+        jpanelHidenExtender = new JPanel();
         jpButtons.setLayout(new BoxLayout(jpButtons, BoxLayout.X_AXIS));
         jpButtons.add(Box.createRigidArea(new Dimension(15, 5)));
         jpButtons.add(waWatch.getJButton());
         waWatch.getJButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
         alAlarm.getJButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
-        jpButtons.add(Box.createRigidArea(new Dimension(5,5)));
+        jpButtons.add(Box.createRigidArea(new Dimension(5, 5)));
         jpButtons.add(alAlarm.getJButton());
-        jpButtons.add(Box.createRigidArea(new Dimension(5,5)));
+        jpButtons.add(Box.createRigidArea(new Dimension(5, 5)));
         bExtender = new ButtonExtender(panelSwitchs , this);
-        bExtender10 = new ButtonExtender(panelSwitchs , this, "<<10", "10>>");
+        bExtender10 = new ButtonExtender(panelSwitchs , this, "<<", ">>");
         bExtender.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
-        bExtender10.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);
+        bExtender10.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);//
         jpButtons.add(bExtender.getjButton());
-        jpButtons.add(bExtender10.getjButton());
+        jpanelHidenExtender.add(bExtender10.getjButton());
+        panelSwitchs.addPaneltoSwitch(jpanelHidenExtender);
         add(jpButtons, BorderLayout.SOUTH);
     }
     private void setRadioButtons(){
         panelSwitchs        = new SwitchPanel(alAlarm);
-        //panelHidenSwitchs   = new SwitchPanel(alAlarm);
         panelSwitchs.addSwitch(3);
         panelSwitchs.addSwitch(9,true);
         panelSwitchs.addSwitch(15);
@@ -75,7 +76,6 @@ public class WinMain extends JFrame{
         panelSwitchs.addHidenSwitch(120);
         add(panelSwitchs.getjPanel(), BorderLayout.EAST);
     }
-
     public Button getbAlarm() {
         return alAlarm.getButton();
     }

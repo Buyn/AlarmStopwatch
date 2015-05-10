@@ -3,6 +3,7 @@ package com.Freeman.switches;
 import com.Freeman.Alarm;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +24,8 @@ public class SwitchPanel {
         jPanelHidenSwitchers     = new JPanel();
         jPanelHidenSwitchers.setLayout(new BoxLayout(jPanelHidenSwitchers , BoxLayout.Y_AXIS));
         jPanelSuming     = new JPanel();
-        jPanelSuming.setLayout(new BoxLayout(jPanelSuming , BoxLayout.X_AXIS));
+        jPanelSuming.setLayout(new BoxLayout(jPanelSuming, BoxLayout.X_AXIS));
+        //jPanelSuming.setLayout(new BorderLayout());
         jPanelSuming.add(jPanelSwitchers);
         jPanelSuming.add(jPanelHidenSwitchers);
         jPanelHidenSwitchers.setVisible(false);
@@ -48,6 +50,9 @@ public class SwitchPanel {
         //to get Last addet element - alSwitchers.get(alSwitchers.size()-1)
         jPanelHidenSwitchers.add(alSwitchers.get(alSwitchers.size()-1).getjPanel());
         alSwitchers.get(alSwitchers.size()-1).setButtonGroupListener(groupSwitches);
+    }
+    public void addPaneltoSwitch(JPanel newJPanel){
+        jPanelSuming.add(newJPanel, BorderLayout.SOUTH);
     }
 
     public JPanel getjPanel() {
