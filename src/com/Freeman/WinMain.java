@@ -49,8 +49,7 @@ public class WinMain extends JFrame{
         //add to panel
         JPanel jpButtons    = new JPanel();
         jpanelHidenExtender = new JPanel();
-        //jpanelHidenExtender.setLayout(new BorderLayout());
-        jpanelHidenExtender.setLayout(new BoxLayout(jpButtons, BoxLayout.Y_AXIS));
+        jpanelHidenExtender.setLayout(new BoxLayout(jpanelHidenExtender, BoxLayout.Y_AXIS));
         jpButtons.setLayout(new BoxLayout(jpButtons, BoxLayout.X_AXIS));
         jpButtons.add(Box.createRigidArea(new Dimension(15, 5)));
         jpButtons.add(waWatch.getJButton());
@@ -65,9 +64,9 @@ public class WinMain extends JFrame{
         bExtender10.getjButton().setAlignmentY(Component.BOTTOM_ALIGNMENT);//
         jpButtons.add(bExtender.getjButton());
         jpanelHidenExtender.add( new JLabel(
-                "<html><span style='font-size:12px' >Step<br>+-10</span></html>"),
-                BorderLayout.NORTH );
-        jpanelHidenExtender.add(bExtender10.getjButton(), BorderLayout.SOUTH);
+                //"<html><span style='font-size:12px'>+-10<br>Step</span></html>"));
+                "<html>+-10<br>Step</html>"));
+        jpanelHidenExtender.add(bExtender10.getjButton());
         panelSwitchs.addPaneltoSwitch(jpanelHidenExtender);
         add(jpButtons, BorderLayout.SOUTH);
     }
