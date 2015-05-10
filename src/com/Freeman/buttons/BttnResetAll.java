@@ -21,6 +21,7 @@ public class BttnResetAll extends Button {
                 alAlarm.setReset();
 //                alAlarm.resetAlarm();//whis out it - not resetin after time off
                 alAlarm.runUpdate();
+                wtWatch.unPause();
                 wtWatch.resetTime();
                 wtWatch.runUpdate();
             }
