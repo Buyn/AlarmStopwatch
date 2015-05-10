@@ -65,7 +65,7 @@ public class WinMain extends JFrame{
         jpButtons.add(bExtender.getjButton());
         jpanelHidenExtender.add( new JLabel(
                 //"<html><span style='font-size:12px'>+-10<br>Step</span></html>"));
-                "<html>+-10<br>Step</html>"));
+                "<html>+-10<br>Minuts<br>Step</html>"));
         jpanelHidenExtender.add(bExtender10.getjButton());
         panelSwitchs.addPaneltoSwitch(jpanelHidenExtender);
         add(jpButtons, BorderLayout.SOUTH);
