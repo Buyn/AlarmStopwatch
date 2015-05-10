@@ -20,7 +20,7 @@ public class ButtonExtender {
 
     /**
      * Constructors Block
-     * action listener using funcktion -
+     * action listener using function -
      * trigerButton as main logic
      */
     public ButtonExtender(SwitchPanel swPanel, WinMain newjFrame){
