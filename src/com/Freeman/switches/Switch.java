@@ -37,11 +37,11 @@ public class Switch {
     }
     //private metods
     private void setButton(){
-        jRadioButton = new JRadioButton("Alarm set:");
+        jRadioButton = new JRadioButton("<html><span style='font-size:4px'>Alarm<br>set:<span></html>");
         setListeners();
     }
     private void setButton(boolean bState){
-        jRadioButton = new JRadioButton("Alarm set:" , bState);
+        jRadioButton = new JRadioButton("<html><span style='font-size:4px'>Alarm<br>set:<span></html>" , bState);
         setListeners();
     }
     private void setListeners(){
